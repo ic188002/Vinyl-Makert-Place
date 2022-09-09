@@ -11,12 +11,12 @@ const salt = 10;
 // APIs for User Registration and Authentication
 
 // HTTP GET - Signup Route - To load the signup form
-exports.auth_signup_get = (req, res) => {
-    res.render("auth/signup");
+exports.payment_signup_get = (req, res) => {
+    res.render("payment/signup");
 }
 
 // HTTP POST - Signup Route - To post the data into the database for registration
-exports.auth_signup_post = (req, res) => {
+exports.payment_signup_post = (req, res) => {
     let user = new User(req.body);
 
     console.log(req.body.password);
@@ -36,24 +36,24 @@ exports.auth_signup_post = (req, res) => {
 }
 
 // HTTP GET - Signin Route - To load the signin form
-exports.auth_signin_get = (req, res) => {
-    res.render("auth/signin");
+exports.payment_signin_get = (req, res) => {
+    res.render("payment/signin");
 }
 
-// HTTP POST - Signin Route - To post the data for authentication
-exports.auth_signin_post = passport.authenticate('local', {
+// HTTP POST - Signin Route - To post the data for paymententication
+exports.payment_signin_post = passport.paymententicate('local', {
     successRedirect: "/",
-    failureRedirect: "/auth/signin"
+    failureRedirect: "/payment/signin"
 })
 
 // HTTP GET - Logout Route - To logout the user
-exports.auth_logout_get = (req, res) => {
+exports.payment_logout_get = (req, res) => {
     // Invalidates the session
    req.logout(function(err) {
     if(err) { 
         
         return next(err);}
     req.flash("success", "You are logged out successfully!!!")
-    res.redirect("/auth/signin");
+    res.redirect("/payment/signin");
    }) 
 }
