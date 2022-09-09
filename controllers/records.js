@@ -1,6 +1,6 @@
 //User Require Models
-const Record = require("../models/Record");
-const User = require("../models/User");
+const {Record} = require("../models/Record");
+const {User} = require("../models/User");
 
 // Require Moment Library
 const moment = require('moment');
