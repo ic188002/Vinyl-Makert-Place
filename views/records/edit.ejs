@@ -1,30 +1,31 @@
 <h1> Edit Listing </h1>
 
-<form method="POST" action="/record/update?_method=PUT">
+<form method="POST" action="/records/update?_method=PUT">
 
-    <div>
+    <div class="form-group">
         <label>Title</label>
-        <input name="title" type="text" value="<%= record.title %>" />
+        <input class="form-control" name="title" type="text" value="<%= record.title %>" />
     </div>
-    <div>
+    <div class="form-group">
         <label>Artist</label>
-        <input name="artist" type="text" value="<%= record.artist %>" />
+        <input class="form-control" name="artist" type="text" value="<%= record.artist %>" />
     </div>
 
-    <div>
+    <div class="form-group">
         <label>Release Date</label>
-        <input name="releaseDate" type="year" value="<%= record.releaseDate %>" />
+        <input class="form-control" name="releaseDate" type="number" value="<%= record.releaseDate %>" />
     </div>
-    <div>
+    <div class="form-group">
         <label>Condition</label>
-        <input name="condition" type="text" value="<%= record.condition %>" />
+        <input class="form-control" name="condition" type="text" value="<%= record.condition %>" />
     </div>
-    <div>
+    <div class="form-group">
         <label>Description</label>
-        <textarea name="description"> <%= record.description %> </textarea>
+        <textarea class="form-control" name="description"> <%= record.description %> </textarea>
     </div>
     <input type="hidden" name="id" value="<%= record._id %>" />
-
-    <button type="submit"> Update Listing </button>
+    <button type="submit" class="btn btn-primary">
+        Update Listing
+    </button>
 
 </form>

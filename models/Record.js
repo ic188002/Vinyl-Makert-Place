@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const recordSchema = mongoose.Schema({
     title: String,
     artist: String,
-    Description: String,
+    description: String,
     condition: String,
     releaseDate: String,
     user: {

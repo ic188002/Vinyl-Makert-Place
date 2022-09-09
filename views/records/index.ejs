@@ -8,9 +8,6 @@
         <th> Condition </th>
         <th> Description </th>
         <th> Created At </th>
-        <th> Updated At </th>
-        <th> Edit </th>
-        <th> Delete </th>
     </tr>
 
 <% records.forEach(function(record){ %>  
@@ -21,10 +18,8 @@
         <td> <%= record.condition %></td>
         <td> <%= record.description %></td>
         <td> <%= moment(record.createdAt).fromNow() %></td>
-        <td> <%= moment(record.updatedAt).fromNow() %></td>
-        <td> <a href="/record/edit?id=<%= record._id %>">Edit</a></td>
-        <td> <a href="/record/delete?id=<%= record._id %>">Delete</a></td>
     </tr>
 <% }) %>
+
 
 </table>
