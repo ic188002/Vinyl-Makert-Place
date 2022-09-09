@@ -50,7 +50,10 @@ const userSchema = mongoose.Schema({
             type : String,
             required: true,
         }
-
+    },
+    record: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Record'
     } 
 })
 
