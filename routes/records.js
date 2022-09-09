@@ -18,8 +18,8 @@ router.get("/records/sell", IsLoggedIn, recordsCntrl.record_create_get);
 router.post("/records/sell", recordsCntrl.record_create_post);
 router.get("/records/index", recordsCntrl.record_index_get);
 router.get("/records/detail", recordsCntrl.record_show_get);
-router.get("/records/delete", recordsCntrl.record_delete_get);
-router.get("/records/edit", recordsCntrl.record_edit_get);
-router.put("/records/update", recordsCntrl.record_update_put);
+router.get("/records/delete", IsLoggedIn, recordsCntrl.record_delete_get);
+router.get("/records/edit", IsLoggedIn, recordsCntrl.record_edit_get);
+router.put("/records/update", IsLoggedIn, recordsCntrl.record_update_put);
 
 module.exports = router;
