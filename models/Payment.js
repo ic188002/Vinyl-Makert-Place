@@ -31,7 +31,7 @@ const paymentSchema = mongoose.Schema({
 });
 
 
-const Payment = mongoose.models("Payment", paymentsSchema);
+const Payment = mongoose.model("Payment", paymentSchema);
 
 
 module.exports = {Payment};

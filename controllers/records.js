@@ -13,7 +13,7 @@ const moment = require('moment');
 exports.record_create_get = (req, res) => {
     User.find()
     .then((users) => {
-        res.render("record/add", {users})
+        res.render("records/add", {users})
     })
     .catch((err) => {
         console.log(err);
@@ -32,7 +32,7 @@ exports.record_create_post = (req, res) => {
                 user.save();
             })
         });
-        res.redirect("/record/index");
+        res.redirect("/records/index");
     })
     .catch((err) => {
         console.log(err);
@@ -45,7 +45,7 @@ exports.record_create_post = (req, res) => {
 exports.record_index_get = (req, res) => {
     Record.find().populate('user')
     .then(records => {
-        res.render("record/index", {records: records, moment})
+        res.render("records/index", {records: records, moment})
     })
     .catch(err => {
         console.log(err);
@@ -58,7 +58,7 @@ exports.record_show_get = (req, res) => {
     // Find the record by ID
     Record.findById(req.query.id).populate('user')
     .then(record => {
-        res.render("record/detail", {record, moment})
+        res.render("records/detail", {record, moment})
     })
     .catch(err => {
         console.log(err)
@@ -70,7 +70,7 @@ exports.record_show_get = (req, res) => {
 exports.record_edit_get = (req, res) => {
     Record.findById(req.query.id)
     .then((record) => {
-        res.render("record/edit", {record})
+        res.render("records/edit", {record})
     })
     .catch(err => {
         console.log(err);
@@ -83,7 +83,7 @@ exports.record_update_put = (req, res) => {
 
     Record.findByIdAndUpdate(req.body.id, req.body)
     .then(() => {
-        res.redirect("/record/index");
+        res.redirect("/records/index");
     })
     .catch(err => {
         console.log(err)
@@ -97,7 +97,7 @@ exports.record_delete_get = (req, res) => {
 
     Record.findByIdAndDelete(req.query.id)
     .then(() => {
-        res.redirect("/record/index");
+        res.redirect("/records/index");
     })
     .catch(err => {
         console.log(err);
