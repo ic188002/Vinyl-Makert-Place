@@ -16,9 +16,5 @@ body {
 #topLine {
 
  
-    display: flex;
-    justify-content: center;
-    align-content: stretch;
-    width: auto;
-    height: 400%;
+    width:100%; height:100%;
 }

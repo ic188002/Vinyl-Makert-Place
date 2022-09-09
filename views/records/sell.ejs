@@ -27,6 +27,23 @@
     <textarea type="text" name="author" class="form-control"></textarea>
 </div>
 
+<!-- <input type="hidden" name="id" value="<%=user._id %>"> -->
+
+<div class="form-group">
+    <label>user</label>
+    <select name="user[]" multiple="multiple" class="form-control">
+
+        <% user.forEach(function(user) {     %> 
+            <option value="<%= user._id %>" > <%= user.name %> </option>
+        <% }) %>
+
+    </select>
+</div>
+
+
+
+
+
 <button type="submit" class="btn btn-primary">
     List for sale
 </button>
