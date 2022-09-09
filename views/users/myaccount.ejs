@@ -1,0 +1,20 @@
+<div>
+    <div>
+      <h3>Hi <%= user.firstName %>!</h3>
+    </div>
+  
+    <div>Email Address: <%= user.emailAddress %></div>
+    <div>Phone Number: <%= user.phoneNumber %></div>
+    <div>Created At: <%= moment(user.createdAt).fromNow() %></div>
+  
+    <br/>
+  
+    <% user.article.forEach(function(records) { %>
+    <hr/>
+    <div>
+      <div>Record: <%= records.title %> </div>
+      <div>Artist: <%= records.artist %> </div>
+      <div>Listed: <%= records.createdAt %> </div>
+    </div>
+    <% }) %>
+  </div>

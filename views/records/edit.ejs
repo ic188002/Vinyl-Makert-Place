@@ -1,0 +1,30 @@
+<h1> Edit Listing </h1>
+
+<form method="POST" action="/record/update?_method=PUT">
+
+    <div>
+        <label>Title</label>
+        <input name="title" type="text" value="<%= record.title %>" />
+    </div>
+    <div>
+        <label>Artist</label>
+        <input name="artist" type="text" value="<%= record.artist %>" />
+    </div>
+
+    <div>
+        <label>Release Date</label>
+        <input name="releaseDate" type="number" value="<%= record.releaseDate %>" />
+    </div>
+    <div>
+        <label>Condition</label>
+        <input name="condition" type="text" value="<%= record.condition %>" />
+    </div>
+    <div>
+        <label>Description</label>
+        <textarea name="description"> <%= record.description %> </textarea>
+    </div>
+    <input type="hidden" name="id" value="<%= record._id %>" />
+
+    <button type="submit"> Update Listing </button>
+
+</form>

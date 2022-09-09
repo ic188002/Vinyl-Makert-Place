@@ -18,5 +18,4 @@ const recordSchema = mongoose.Schema({
 
 const record = mongoose.record("Record", recordSchema);
 
-
 module.exports = {record};

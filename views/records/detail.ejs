@@ -1,0 +1,24 @@
+<h2> <%= record.title %> </h2>
+<div>
+    Artist: <%= record.artist %>
+</div>
+
+<div>
+    Release Date: <%= record.releaseDate %>
+</div>
+
+<div>
+    Condition: <%= record.condition %>
+</div>
+
+<div>
+    Description: <%= record.description %>
+</div>
+
+<div>
+    CreatedAt: <%= moment(record.createdAt).fromNow() %>
+</div>
+
+<div>
+   UpdatedAt: <%= moment(record.updatedAt).fromNow() %>
+</div>
