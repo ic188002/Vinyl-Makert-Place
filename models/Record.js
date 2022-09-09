@@ -9,10 +9,10 @@ const recordSchema = mongoose.Schema({
     Description: String,
     condition: String,
     releaseDate: String,
-    user: [{
+    user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
-    }]
+    }
 
 }, 
 

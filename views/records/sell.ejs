@@ -1,6 +1,6 @@
 <h1> List your record </h1>
 
-<form method="POST" action="/record/add">
+<form method="POST" action="/records/sell">
 
 <div class="form-group">
     <label>Title</label>
@@ -14,12 +14,12 @@
 
 <div class="form-group">
     <label>Release Date</label> 
-<input name="releaseDate" type="text" class="form-control"/>
+<input name="releaseDate" type="date" class="form-control"/>
 </div>
 
 <div class="form-group">
     <label>Condition</label>
-    <input type="number" name="totalWords" class="form-control" />
+    <input type="text" name="totalWords" class="form-control" />
 </div>
 
 <div class="form-group">
@@ -27,22 +27,10 @@
     <textarea type="text" name="author" class="form-control"></textarea>
 </div>
 
-<!-- <input type="hidden" name="id" value="<%=user._id %>"> -->
-
-<div class="form-group">
-    <label>user</label>
-    <select name="user[]" multiple="multiple" class="form-control">
-
-        <% user.forEach(function(user) {     %> 
-            <option value="<%= user._id %>" > <%= user.name %> </option>
-        <% }) %>
-
-    </select>
-</div>
 
 
 
-
+<input type="text" name="user" value="<%= currentUser._id %>" />
 
 <button type="submit" class="btn btn-primary">
     List for sale
