@@ -30,13 +30,7 @@ const userSchema = mongoose.Schema({
     password: {
         type: String,
         required: true,
-        minlenght: [6, 'need to be longer'],
-    },
-    password: {
-        type: String,
-        required: true,
-        minlenght: [6, 'need to be longer'],
-        unique: true,
+        minlenght: [8, 'need to be longer'],
     },
     shippingAddress: {
          streetName: {
