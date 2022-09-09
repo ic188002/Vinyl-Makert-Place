@@ -13,7 +13,7 @@ const moment = require('moment');
 exports.record_create_get = (req, res) => {
     User.find()
     .then((users) => {
-        res.render("records/add", {users})
+        res.render("records/sell", {users})
     })
     .catch((err) => {
         console.log(err);
@@ -26,12 +26,11 @@ exports.record_create_post = (req, res) => {
     let record = new Record(req.body);
     record.save()
     .then(() => {
-        req.body.user.forEach(user => {
-            User.findById(user, (error, user) => {
-                user.record.push(record);
-                user.save();
-            })
-        });
+        // console.log(req.body.user);
+        //     User.findById(req.body.user, (error, user) => {
+        //         user.record.push(record);
+        //         user.save();
+        //     })
         res.redirect("/records/index");
     })
     .catch((err) => {
