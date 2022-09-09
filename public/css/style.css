@@ -1,0 +1,24 @@
+body {
+    background-color: antiquewhite;
+    margin: auto;
+    
+
+}
+#head {
+    
+
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    
+}
+#topLine {
+
+ 
+    display: flex;
+    justify-content: center;
+    align-content: stretch;
+    width: auto;
+    height: 400%;
+}
