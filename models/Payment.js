@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Schema
-const paymentsSchema = mongoose.Schema({
+const paymentSchema = mongoose.Schema({
     billingAddress: {
         streetName: {
            type: String,
@@ -31,7 +31,7 @@ const paymentsSchema = mongoose.Schema({
 });
 
 
-const Payments = mongoose.models("Payments", paymentsSchema);
+const Payment = mongoose.models("Payment", paymentsSchema);
 
 
-module.exports = {Payments};
+module.exports = {Payment};
