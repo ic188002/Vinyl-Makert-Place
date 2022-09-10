@@ -9,13 +9,13 @@
     <div>Created At: <%= moment(currentUser.createdAt).fromNow() %></div>
   
     <br/>
-  
+    <% if(currentUser.record) { %>
     <% currentUser.record.forEach(function(record) { %>
-    <hr/>
-    <div>
-      <div>Record: <%= records.title %> </div>
-      <div>Artist: <%= records.artist %> </div>
-      <div>Listed: <%= records.createdAt %> </div>
+      <hr/>
+      <div>
+        <div>Record: <%= records.title %> </div>
+        <div>Artist: <%= records.artist %> </div>
+        <div>Listed: <%= records.createdAt %> </div>
+      </div>
+      <% })} %>
     </div>
-    <% }) %>
-  </div>

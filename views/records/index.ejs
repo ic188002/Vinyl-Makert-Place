@@ -12,7 +12,7 @@
 
 <% records.forEach(function(record){ %>  
     <tr>
-        <td> <a href="/record/detail?id=<%= record._id %>"> <h3><%= record.title %></h3> </a> </td>
+        <td> <a href="/records/detail?id=<%= record._id %>"> <h3><%= record.title %></h3> </a> </td>
         <td> <%= record.artist %></td>
         <td> <%= record.releaseDate %></td>
         <td> <%= record.condition %></td>

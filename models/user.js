@@ -54,8 +54,8 @@ const userSchema = mongoose.Schema({
     record: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Record'
-    } 
-})
+    }
+},{timestamps: true})
 
 
 userSchema.methods.verifyPassword = function(password){

@@ -45,9 +45,11 @@ exports.user_show_get = (req, res) => {
     console.log(req.query.id);
 
     // Find the user by ID
-    User.findById(req.query.id).populate('article')
+    User.findById(req.query.id)
+    .populate('record')
+    console.log(record)
     .then(user => {
-        res.render("user/detail", {user, moment})
+        res.render("users/myaccount", {user, moment})
     })
     .catch(err => {
         console.log(err)
@@ -59,7 +61,7 @@ exports.user_show_get = (req, res) => {
 exports.user_edit_get = (req, res) => {
     User.findById(req.query.id)
     .then((user) => {
-        res.render("user/edit", {user})
+        res.render("users/edit", {user})
     })
     .catch(err => {
         console.log(err);
@@ -72,7 +74,7 @@ exports.user_update_put = (req, res) => {
 
     User.findByIdAndUpdate(req.body.id, req.body)
     .then(() => {
-        res.redirect("/user/myaccount");
+        res.redirect("/users/myaccount");
     })
     .catch(err => {
         console.log(err)
@@ -86,7 +88,7 @@ exports.user_delete_get = (req, res) => {
 
     User.findByIdAndDelete(req.query.id)
     .then(() => {
-        res.redirect("/user/myaccount");
+        res.redirect("/users/myaccount");
     })
     .catch(err => {
         console.log(err);
