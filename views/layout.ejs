@@ -19,7 +19,7 @@
     </div>
     <div class="container">
         <% if(currentUser) { %> 
-            Hi <%= currentUser.firstName %> <%= currentUser.lastName %>
+            Hi <%= currentUser.firstName %>
             <a href="/auth/logout" class="btn btn-outline-primary">Logout</a>
             <a href="/users/myaccount" class="btn btn-outline-primary">My Account</a>
         <% } else { %>

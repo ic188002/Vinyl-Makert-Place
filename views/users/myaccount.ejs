@@ -13,9 +13,10 @@
     <% currentUser.record.forEach(function(record) { %>
       <hr/>
       <div>
-        <div>Record: <%= records.title %> </div>
-        <div>Artist: <%= records.artist %> </div>
-        <div>Listed: <%= records.createdAt %> </div>
+        <div>Record: <%= record.title %> </div>
+        <div>Artist: <%= record.artist %> </div>
+        <div>Listed: <%= record.createdAt %> </div>
       </div>
-      <% })} %>
     </div>
+      <% })} %>
+<br>

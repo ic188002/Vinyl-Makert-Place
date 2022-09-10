@@ -51,10 +51,10 @@ const userSchema = mongoose.Schema({
             required: true,
         }
     },
-    record: {
+    record: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Record'
-    }
+    }]
 },{timestamps: true})
 
 
