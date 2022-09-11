@@ -1,22 +1,19 @@
 <div>
     <div>
-        <% console.log(currentUser) %>
-      <h3>Hi <%= currentUser.firstName %>!</h3>
+      <h3>Hi <%= user.firstName %>!</h3>
     </div>
   
-    <div>Email Address: <%= currentUser.emailAddress %></div>
-    <div>Phone Number: <%= currentUser.phoneNumber %></div>
-    <div>Created At: <%= moment(currentUser.createdAt).fromNow() %></div>
-    <div><%= currentUser.record.title %></div>
-    <div><%= currentUser %></div>
+    <div>Email Address: <%= user.emailAddress %></div>
+    <div>Phone Number: <%= user.phoneNumber %></div>
+    <div>Created At: <%= moment(user.createdAt).fromNow() %></div>
     <br/>
-    <% if(currentUser.record) { %>
-    <% currentUser.record.forEach(function(record) { %>
+    <% if(user.record) { %>
+    <% user.record.forEach(function(record) { %>
       <hr/>
       <div>
         <div>Record: <%= record.title %> </div>
         <div>Artist: <%= record.artist %> </div>
-        <div>Listed: <%= record.createdAt %> </div>
+        <div>Listed: <%= moment(record.createdAt).fromNow() %> </div>
       </div>
     </div>
       <% })} %>

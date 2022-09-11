@@ -25,8 +25,9 @@ const moment = require('moment');
 
 // // HTTP GET - User By Id
 exports.user_show_get = (req, res) => {
-    User.find()
-    .populate('record')
+    console.log(req.user._id);
+    // Find the record by ID
+    User.findById(req.user._id).populate('record')
     .then(user => {
         res.render("users/myaccount", {user, moment})
     })
