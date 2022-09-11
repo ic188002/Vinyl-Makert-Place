@@ -7,7 +7,8 @@
     <div>Email Address: <%= currentUser.emailAddress %></div>
     <div>Phone Number: <%= currentUser.phoneNumber %></div>
     <div>Created At: <%= moment(currentUser.createdAt).fromNow() %></div>
-  
+    <div><%= currentUser.record.title %></div>
+    <div><%= currentUser %></div>
     <br/>
     <% if(currentUser.record) { %>
     <% currentUser.record.forEach(function(record) { %>
