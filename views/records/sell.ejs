@@ -1,7 +1,11 @@
 <h1> List your record </h1>
 
-<form method="POST" action="/records/sell">
+    <form class="form-inline" method="POST" action="/records/search">
+      <input  id="input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button  id="submit" class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>
 
+<form method="POST" action="/records/sell">
 <div class="form-group">
     <label>Title</label>
     <input name="title" type="text" class="form-control"/>
