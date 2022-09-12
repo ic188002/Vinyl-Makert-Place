@@ -19,6 +19,29 @@ const app = express();
 // Using Connect Flash
 app.use(flash());
 
+
+
+var bodyParser = require('body-parser');
+var fs = require('fs');
+var path = require('path');
+require('dotenv/config');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Look for all static files in public folder
 // (CSS, JS, Images, Videos, Audio files)
 app.use(express.static("public"));
@@ -79,3 +102,61 @@ mongoose.connect(process.env.MongoDBURL,
 app.listen(PORT, () => {
     console.log(`Discoid is running on port ${PORT}`);
 })
+
+
+
+///might need to go to controller
+
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+  
+
+var multer = require('multer');
+  
+var storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, 'uploads')
+    },
+    filename: (req, file, cb) => {
+        cb(null, file.fieldname + '-' + Date.now())
+    }
+});
+  
+// var upload = multer({ storage: storage });
+
+// var imgModel = require('models/user');
+
+// app.get('/', (req, res) => {
+//     imgModel.find({}, (err, items) => {
+//         if (err) {
+//             console.log(err);
+//             res.status(500).send('An error occurred', err);
+//         }
+//         else {
+//             res.render('imagesPage', { items: items });
+//         }
+//     });
+// });
+
+
+// app.post('/', upload.single('image'), (req, res, next) => {
+  
+//     var obj = {
+//         name: req.body.name,
+//         desc: req.body.desc,
+//         img: {
+//             data: fs.readFileSync(path.join(__dirname + '/uploads/' + req.file.filename)),
+//             contentType: 'image/png'
+//         }
+//     }
+//     imgModel.create(obj, (err, item) => {
+//         if (err) {
+//             console.log(err);
+//         }
+//         else {
+//             // item.save();
+//             res.redirect('/');
+//         }
+//     });
+// });

@@ -1,7 +1,7 @@
 body {
-    background-color: antiquewhite;
+    background-color: rgb(255, 255, 255);
     margin: auto;
-    
+    margin-top: 10px;
 
 }
 #head {
@@ -14,7 +14,20 @@ body {
     
 }
 #topLine {
-
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
  
     width:100%; height:100%;
+}
+
+.nav{
+    float: left;
+    padding: 20px;
+}
+
+.menuAlignment{
+    text-align: right;
+    padding: 20px;
 }
