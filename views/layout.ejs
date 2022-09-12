@@ -1,35 +1,32 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog App</title>
+    <title>Discoid </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-    <div class="container" id="head">
-        <a href="https://ibb.co/HYs6kx7"><img src="https://i.ibb.co/y51tbY0/Untitled-Artwork-44.png" alt="Untitled-Artwork-44" border="0"></a>
+    <div class="container">
+        HEADER
     </div>
-   
-    <div class="container"><h1><a href="/"></a></h1></div>
+    <div class="container"><h1><a href="/">Discoid</a></h1></div>
     <div class="container">
         <a href="/records/index" class="navbar-brand">Buy Records</a>
         <a href="/records/sell" class="navbar-brand">Sell Records</a>
     </div>
-    <div class="container menuAlignment" 
+    <div class="container">
         <% if(currentUser) { %> 
-            Hi <%= currentUser.firstName %> <%= currentUser.lastName %>
+            Hi <%= currentUser.firstName %>
             <a href="/auth/logout" class="btn btn-outline-primary">Logout</a>
+            <a href="/users/myaccount" class="btn btn-outline-primary">My Account</a>
         <% } else { %>
-            <a href="/auth/signin"  class="btn btn-outline-primary">Signin</a>
+            <a href="/auth/signin"  class="btn btn-outline-primary">Sign In</a>
             <a href="/auth/signup"  class="btn btn-outline-primary">Signup</a>
-        
         <% } %>
-    </div>
-    <div> 
-        <img id='topLine' src="../Untitled_Artwork 7.png" alt="Untitled_Artwork 6.png"/></a></a><br />
     </div>
     <div class="container">
         <%- body %>
@@ -37,7 +34,27 @@
     <div class="container">
         FOOTER
     </div>
- 
+    <script>
+        $(document).ready(function() {
+          let imagesPreview = function(input, placeToInsertImagePreview) {
+            if (input.files) {
+              let filesAmount = input.files.length;
+              for (i = 0; i < filesAmount; i++) {
+                let reader = new FileReader();
+                reader.onload = function(event) {
+                  $($.parseHTML("<img>"))
+                    .attr("src", event.target.result)
+                    .appendTo(placeToInsertImagePreview);
+                };
+                reader.readAsDataURL(input.files[i]);
+              }
+            }
+          };
+          $("#input-files").on("change", function() {
+            imagesPreview(this, "div.preview-images");
+          });
+        });
+      </script>
     <script
     src="https://code.jquery.com/jquery-3.6.1.min.js"
     integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="

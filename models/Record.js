@@ -14,9 +14,7 @@ const recordSchema = mongoose.Schema({
         ref: 'User'
     }
 
-}, 
-
-);
+},{timestamps: true});
 
 const Record = mongoose.model("Record", recordSchema);
 

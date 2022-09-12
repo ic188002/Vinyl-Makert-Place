@@ -32,6 +32,10 @@ const userSchema = mongoose.Schema({
         required: true,
         minlenght: [8, 'need to be longer'],
     },
+    img: {
+        data: Buffer,
+        contentType: String
+    },
     shippingAddress: {
          streetName: {
             type: String,
@@ -51,11 +55,7 @@ const userSchema = mongoose.Schema({
             required: true,
         }
 
-    },
-    img : {
-        data: Buffer,
-        contentType: String
-    }
+    } 
 })
 
 

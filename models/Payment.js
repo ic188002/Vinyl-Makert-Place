@@ -26,9 +26,7 @@ const paymentSchema = mongoose.Schema({
         ref: 'User'
     }]
 
-}, 
-
-});
+}},{timestamps: true});
 
 
 const Payment = mongoose.model("Payment", paymentSchema);

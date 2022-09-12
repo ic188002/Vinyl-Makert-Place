@@ -1,6 +1,6 @@
 //User Require Models
 const {Record} = require("../models/Record");
-const {User} = require("../models/User");
+const {User} = require("../models/user");
 
 // Require Moment Library
 const moment = require('moment');
@@ -26,11 +26,11 @@ exports.record_create_post = (req, res) => {
     let record = new Record(req.body);
     record.save()
     .then(() => {
-        // console.log(req.body.user);
-        //     User.findById(req.body.user, (error, user) => {
-        //         user.record.push(record);
-        //         user.save();
-        //     })
+        console.log(req.body.user);
+            User.findById(req.body.user, (error, user) => {
+                user.record.push(record);
+                user.save();
+            })
         res.redirect("/records/index");
     })
     .catch((err) => {
