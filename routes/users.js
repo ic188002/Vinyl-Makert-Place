@@ -10,6 +10,7 @@ router.use(express.urlencoded({ extended: true }));
 
 const userCntrl = require("../controllers/users");
 
+
 // IsLoggedIn middleware
 const IsLoggedIn = require('../helper/isLoggedIn');
 
@@ -18,6 +19,12 @@ const IsLoggedIn = require('../helper/isLoggedIn');
 // router.post("/users/add", userCntrl.user_create_post);
 // router.get("/users/myaccount", IsLoggedIn, userCntrl.user_index_get);
 router.get("/users/myaccount", IsLoggedIn, userCntrl.user_show_get);
+
+
+
+
+
+
 // router.get("/users/delete", userCntrl.user_delete_get);
 // router.get("/users/edit", userCntrl.user_edit_get);
 // router.put("/users/update", userCntrl.user_update_put);

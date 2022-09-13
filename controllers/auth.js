@@ -1,5 +1,12 @@
 // Require User Model
+const {User} = require("../models/User");
+ 
 
+var fs = require('fs');
+var multer = require('multer');
+
+var path = require('path');
+require('dotenv/config');
 
 // Require Passport Configurations
 let passport = require("../helper/ppConfig");
@@ -18,8 +25,12 @@ exports.auth_signup_get = (req, res) => {
 // HTTP POST - Signup Route - To post the data into the database for registration
 exports.auth_signup_post = (req, res) => {
     let user = new User(req.body);
-
-    console.log(req.body.password);
+    console.log(req.body);
+    console.log(req.file);
+    let imagPath = '/uploads/' + req.file.filename;
+    user.profilePicture= imagPath;
+      
+ 
     let hash = bcrypt.hashSync(req.body.password, salt);
     console.log(hash);
 

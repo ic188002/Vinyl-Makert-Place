@@ -1,23 +1,15 @@
-<div>
+<div class="profile">
+  
     <div>
-      <h3>Hi <%= user.firstName %>!</h3>
-    </div>
+      <br>
+      <h3> <%= user.firstName %> Profile</h3>
+<br>
+
     <div>
-      <img src="data:image/<%=image.profilePicture.contentType%>;base64,
-        <%=image.profilePicture.data.toString('base64')%>">
-      <div>
-    <div> <% user.profilePicture %></div>
+    <img class="img" src= "<%=user.profilePicture%>"  width= "300" height="300"></div>
     <div>Email Address: <%= user.emailAddress %></div>
     <div>Phone Number: <%= user.phoneNumber %></div>
     <div>Created At: <%= moment(user.createdAt).fromNow() %></div>
     <br/>
-  
-    <% user.article.forEach(function(records) { %>
-    <hr/>
-    <div>
-      <div>Record: <%= records.title %> </div>
-      <div>Artist: <%= records.artist %> </div>
-      <div>Listed: <%= records.createdAt %> </div>
     </div>
-    <% }) %>
-  </div>
+</div>
