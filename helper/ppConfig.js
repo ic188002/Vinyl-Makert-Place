@@ -41,8 +41,3 @@ module.exports = passport;
 
 
 
-
-
-
-//exporting passport middleware
-module.exports = passport

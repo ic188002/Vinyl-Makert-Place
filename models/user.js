@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-
+var Buffer = require('buffer/').Buffer
 const userSchema = mongoose.Schema({
     firstName: {
         type: String,
@@ -50,6 +50,9 @@ const userSchema = mongoose.Schema({
             type : String,
             required: true,
         }
+    },
+    profilePicture: {
+        type: String
     },
     record: [{
         type: mongoose.Schema.Types.ObjectId,

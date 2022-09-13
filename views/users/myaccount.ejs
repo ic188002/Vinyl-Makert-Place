@@ -1,20 +1,15 @@
-<div>
-    <div>
-      <h3>Hi <%= user.firstName %>!</h3>
-    </div>
+<div class="profile">
   
+    <div>
+      <br>
+      <h3> <%= user.firstName %> Profile</h3>
+<br>
+
+    <div>
+    <img class="img" src= "<%=user.profilePicture%>"  width= "300" height="300"></div>
     <div>Email Address: <%= user.emailAddress %></div>
     <div>Phone Number: <%= user.phoneNumber %></div>
     <div>Created At: <%= moment(user.createdAt).fromNow() %></div>
     <br/>
-    <% if(user.record) { %>
-    <% user.record.forEach(function(record) { %>
-      <hr/>
-      <div>
-        <div>Record: <%= record.title %> </div>
-        <div>Artist: <%= record.artist %> </div>
-        <div>Listed: <%= moment(record.createdAt).fromNow() %> </div>
-      </div>
     </div>
-      <% })} %>
-<br>
+</div>
