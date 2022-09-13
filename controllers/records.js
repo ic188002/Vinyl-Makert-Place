@@ -2,7 +2,7 @@
 const {Record} = require("../models/Record");
 const {User} = require("../models/User");
 var SpotifyWebApi = require('spotify-web-api-node');
-const https = require("https");
+const axios = require('axios')
 
 // Require Moment Library
 const moment = require('moment');
@@ -15,7 +15,12 @@ const { application } = require("express");
 exports.record_create_get = (req, res) => {
     User.find()
     .then((users) => {
-        res.render("records/sell", {users})
+        if(!req.query){
+            res.render("records/sell", {users})
+        } else {
+            let populateSell = req.query
+            res.render("records/sell", {users, populateSell})
+        }
     })
     .catch((err) => {
         console.log(err);
@@ -113,8 +118,8 @@ var spotifyApi = new SpotifyWebApi({
 
 spotifyApi.clientCredentialsGrant().then(
     function(data) {
-      console.log('The access token expires in ' + data.body['expires_in']);
-      console.log('The access token is ' + data.body['access_token']);
+      console.log('Your Spotify access token expires in ' + data.body['expires_in'] + ' seconds');
+    //   console.log('The access token is ' + data.body['access_token']);
       spotifyApi.setAccessToken(data.body['access_token']);
     },
     function(err) {
@@ -124,12 +129,10 @@ spotifyApi.clientCredentialsGrant().then(
 
 // HTTP POST - Record Search
 exports.record_search_post = (req, res) => {
-    query = req.body.search
     spotifyApi.searchAlbums(req.body.search, { limit: 20, offset: req.query.offset })
     .then(function(data) {
-        console.log(query);
         // console.log('Album information', data.body)
-        res.render("records/search", {data, query})
+        res.render("records/search", {data})
     })
     .catch(err => {
         console.log(err);
@@ -138,23 +141,22 @@ exports.record_search_post = (req, res) => {
 
 // HTTP POST - Record Next
 exports.record_next_post = (req, res) => {
-    console.log(req.body.next)
-    spotifyApi.searchAlbums("madlib", { limit: 20, offset: req.query.offset })
-    .then(function(data) {
-        res.render("records/next", {data})
-    })
-    .catch(err => {
-        console.log(err);
-    })
+        axios.get(req.body.next, { headers: { 'Authorization': 'Bearer' + ' ' + spotifyApi._credentials.accessToken } })
+        .then(response => {
+              const data = response.data;
+              res.render("records/page", {data});
+        }).catch(err => {
+              console.error(err);
+        })
 }
 
 // HTTP POST - Record Next
 exports.record_prev_post = (req, res) => {
-    console.log(req.body)
-    .then(function(data) {
-        res.render("records/prev", {data})
-    })
-    .catch(err => {
-        console.log(err);
+    axios.get(req.body.prev, { headers: { 'Authorization': 'Bearer' + ' ' + spotifyApi._credentials.accessToken } })
+    .then(response => {
+          const data = response.data;
+          res.render("records/page", {data});
+    }).catch(err => {
+          console.error(err);
     })
 }

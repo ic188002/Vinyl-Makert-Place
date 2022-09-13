@@ -6,19 +6,44 @@
     </form>
 
 <form method="POST" action="/records/sell">
+<% if(!populateSell){ %>
+    <div class="form-group">
+        <label>Title</label>
+        <input name="title" type="text" class="form-control"/>
+    </div>
+    
+    <div class="form-group">
+        <label>Artist</label>
+        <input name="artist" class="form-control"></input>
+    </div>
+    
+    <div class="form-group">
+        <label>Release Date</label> 
+    <input name="releaseDate" type="date" class="form-control"/>
+    </div>
+<% } else { %>
+    <%
+    let tidyTitleSell = populateSell.title;
+    tidyTitleSell = tidyTitleSell.replace(/^"(.+(?="$))"$/, '$1');
+    %>
+    <div class="form-group">
+        <label>Title</label>
+        <input name="title" type="text" class="form-control" value="<%= tidyTitleSell %>"/>
+    </div>
+    
+    <div class="form-group">
+        <label>Artist</label>
+        <input name="artist" class="form-control"  value="<%= populateSell.artist %>"/>
+    </div>
+    
+    <div class="form-group">
+        <label>Release Date</label> 
+    <input name="releaseDate" type="date" class="form-control"  value="<%= populateSell.releaseDate %>"/>
+    </div>
+<% } %>
 <div class="form-group">
-    <label>Title</label>
-    <input name="title" type="text" class="form-control"/>
-</div>
-
-<div class="form-group">
-    <label>Artist</label>
-    <input name="artist" class="form-control"></input>
-</div>
-
-<div class="form-group">
-    <label>Release Date</label> 
-<input name="releaseDate" type="date" class="form-control"/>
+    <label>Asking Price</label> 
+<input name="askingPrice" type="number" class="form-control"/>
 </div>
 
 <div class="form-group">
