@@ -17,6 +17,7 @@
         <td> <%= record.releaseDate %></td>
         <td> <%= record.condition %></td>
         <td> <%= record.description %></td>
+        <div> <% record.albumCover %></div>
         <td> <%= moment(record.createdAt).fromNow() %></td>
     </tr>
 <% }) %>

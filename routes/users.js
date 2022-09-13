@@ -21,8 +21,8 @@ router.get("/users/myaccount", IsLoggedIn, userCntrl.user_show_get);
 // router.get("/users/delete", userCntrl.user_delete_get);
 // router.get("/users/edit", userCntrl.user_edit_get);
 // router.put("/users/update", userCntrl.user_update_put);
-
-
+router.post("/users/add", userCntrl.user_picture_post);
+router.get("/user/myaccount", userCntrl.user_picture_get)
 
 
 module.exports = router;

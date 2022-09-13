@@ -2,7 +2,11 @@
     <div>
       <h3>Hi <%= user.firstName %>!</h3>
     </div>
-  
+    <div>
+      <img src="data:image/<%=image.profilePicture.contentType%>;base64,
+        <%=image.profilePicture.data.toString('base64')%>">
+      <div>
+    <div> <% user.profilePicture %></div>
     <div>Email Address: <%= user.emailAddress %></div>
     <div>Phone Number: <%= user.phoneNumber %></div>
     <div>Created At: <%= moment(user.createdAt).fromNow() %></div>
@@ -14,6 +18,7 @@
         <div>Record: <%= record.title %> </div>
         <div>Artist: <%= record.artist %> </div>
         <div>Listed: <%= moment(record.createdAt).fromNow() %> </div>
+        <div> <% </div>
       </div>
     </div>
       <% })} %>

@@ -32,7 +32,7 @@ const userSchema = mongoose.Schema({
         required: true,
         minlenght: [8, 'need to be longer'],
     },
-    img: {
+    profilePicture: {
         data: Buffer,
         contentType: String
     },

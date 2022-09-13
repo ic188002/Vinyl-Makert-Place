@@ -17,9 +17,34 @@ const IsLoggedIn = require('../helper/isLoggedIn');
 router.get("/records/sell", IsLoggedIn, recordsCntrl.record_create_get);
 router.post("/records/sell", recordsCntrl.record_create_post);
 router.get("/records/index", recordsCntrl.record_index_get);
+
+router.get("/records/index", recordsCntrl.record_cover_get);
+router.post("/records/index", recordsCntrl.record_cover_post );
+
+
+const homeController = require("../controllers/home");
+const uploadController = require("../controllers/upload");
+
+
+
+let routes = app => {
+  router.get("/", homeController.getHome);
+
+  router.post("/upload", uploadController.uploadFiles);
+  router.get("/files", uploadController.getListFiles);
+  router.get("/files/:name", uploadController.download);
+
+  return app.use("/", router);
+};
+
+
+
 router.get("/records/detail", recordsCntrl.record_show_get);
 router.get("/records/delete", IsLoggedIn, recordsCntrl.record_delete_get);
 router.get("/records/edit", IsLoggedIn, recordsCntrl.record_edit_get);
 router.put("/records/update", IsLoggedIn, recordsCntrl.record_update_put);
+
+
+
 
 module.exports = router;
