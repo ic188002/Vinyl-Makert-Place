@@ -21,6 +21,8 @@ router.get("/records/detail", recordsCntrl.record_show_get);
 router.get("/records/delete", IsLoggedIn, recordsCntrl.record_delete_get);
 router.get("/records/edit", IsLoggedIn, recordsCntrl.record_edit_get);
 router.put("/records/update", IsLoggedIn, recordsCntrl.record_update_put);
-router.post("/records/search", IsLoggedIn, recordsCntrl.record_search_post);
+router.post("/records/search", recordsCntrl.record_search_post);
+router.post("/records/next", recordsCntrl.record_next_post);
+router.post("/records/prev", recordsCntrl.record_prev_post);
 
 module.exports = router;

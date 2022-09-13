@@ -18,16 +18,8 @@ let img = (tmp[key].images[2].url).replace(/\/+$/,"") %>
         <td> <%= tmp[key].release_date %> </td>
     </tr>
 <% }) %>
-</table>
 
-<form action="/records/prev" method="post">
-    <input name="prev" type="hidden" value= <%= data.body.albums.prev %>>
-    <button type="submit" class="btn btn-primary">Prev</button>
-</form>
-<form action="/records/next" method="post">
-    <input name="next" type="hidden" value= <%= data.body.albums.next %>>
-    <button type="submit" class="btn btn-primary">Next</button>
-</form>
-<a href="/records/next">Next</a>
-<%= data.body.albums.next %>
-<%= data.body.albums.prev %>
+<a href= <%= %>>Next</a>
+
+
+</table>

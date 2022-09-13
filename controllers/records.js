@@ -2,9 +2,11 @@
 const {Record} = require("../models/Record");
 const {User} = require("../models/User");
 var SpotifyWebApi = require('spotify-web-api-node');
+const https = require("https");
 
 // Require Moment Library
 const moment = require('moment');
+const { application } = require("express");
 
 // CRUD
 
@@ -108,25 +110,49 @@ var spotifyApi = new SpotifyWebApi({
     clientSecret: process.env.spotifySecret,
     redirectUri: `http://localhost:${process.env.PORT}`
   });
-  
-  spotifyApi.clientCredentialsGrant().then(
-      function(data) {
-        console.log('The access token expires in ' + data.body['expires_in']);
-        console.log('The access token is ' + data.body['access_token']);
-        spotifyApi.setAccessToken(data.body['access_token']);
-      },
-      function(err) {
-        console.log('Something went wrong when retrieving an access token', err);
-      }
-  );
 
-// HTTP POST - Record
+spotifyApi.clientCredentialsGrant().then(
+    function(data) {
+      console.log('The access token expires in ' + data.body['expires_in']);
+      console.log('The access token is ' + data.body['access_token']);
+      spotifyApi.setAccessToken(data.body['access_token']);
+    },
+    function(err) {
+      console.log('Something went wrong when retrieving an access token', err);
+    }
+);
+
+// HTTP POST - Record Search
 exports.record_search_post = (req, res) => {
-    spotifyApi.searchAlbums("madlib", { limit: 10, offset: 20 })
+    query = req.body.search
+    spotifyApi.searchAlbums(req.body.search, { limit: 20, offset: req.query.offset })
     .then(function(data) {
-        console.log(req.body)
-        console.log('Album information', data.body)
-        res.render("records/search", {data})
+        console.log(query);
+        // console.log('Album information', data.body)
+        res.render("records/search", {data, query})
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
+
+// HTTP POST - Record Next
+exports.record_next_post = (req, res) => {
+    console.log(req.body.next)
+    spotifyApi.searchAlbums("madlib", { limit: 20, offset: req.query.offset })
+    .then(function(data) {
+        res.render("records/next", {data})
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
+
+// HTTP POST - Record Next
+exports.record_prev_post = (req, res) => {
+    console.log(req.body)
+    .then(function(data) {
+        res.render("records/prev", {data})
     })
     .catch(err => {
         console.log(err);
