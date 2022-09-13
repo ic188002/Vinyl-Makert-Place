@@ -1,9 +1,14 @@
+
+
 body {
     background-color: rgb(255, 255, 255);
     margin: auto;
-    margin-top: 10px;
+ 
+    
+
 
 }
+
 #head {
     
 
@@ -21,12 +26,10 @@ body {
  
     width:100%; height:100%;
 }
-
 .nav{
     float: left;
     padding: 20px;
 }
-
 .menuAlignment{
     text-align: right;
     padding: 20px;
@@ -35,45 +38,56 @@ h1 {
     font-family: 'Quicksand', sans-serif;
     font-size: 80px;
     color: rgb(242, 179, 231);
-    
 }
 a:link {
     text-decoration: none;
-
   }
-
 .title {
 
-  
-    background-color: aquamarine;
-    width: 100%;
-    position: relative;
 }
 
-.sign {
-
-
-}
-/* .temp {
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-    margin: auto 0;
-    position: absolute;
-    z-index: 1;
-
-
-} */
-header {
-    top: 150px;
-}
 .profile {
+    display: flex;
+    flex-direction: column;
+   
+   
+}
+.backgroundProfile {
+    /* background-image: url("https://i.ibb.co/kS68PYZ/record.png"); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: aquamarine;
+    /* background-color: brown; */
+    
+}
+.img {
+    
+    border-radius: 100%;
+}
+.back {
+    background-size: cover;
     display: flex;
     justify-content: center;
     text-align: center;
-
-    background-color: aquamarine;
+    z-index: -1;
+    position: absolute;
 }
-.img {
-    border-radius: 100%;
+.myaccountcover {
+    background-color: rgb(255, 255, 255);
+    height: 1250px;
+}
+.footer { 
+  bottom: 0px;
+       
+}
+
+.hero {
+    background-image: url("/photos/bar.png");
+    background-size: cover;
+    width: 100%;
+}
+.sign {
+    float: right;
 }
