@@ -1,3 +1,4 @@
+// Require Express
 const express = require('express');
 
 // Require and Initialze dotenv
@@ -34,9 +35,6 @@ const authRouter = require('./routes/auth');
 // Look into views folder for the file named as layout.ejs
 app.use(expressLayouts);
 
-
-
-
 // Express Session and Passport
 let session = require('express-session');
 let passport = require('./helper/ppConfig');
@@ -71,72 +69,13 @@ app.set("view engine", "ejs");
 
 // Validate database Connection
 mongoose.connect(process.env.MongoDBURL,
-    { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, },
+    { useNewUrlParser: true, useUnifiedTopology: true },
     () => {
         console.log("MongoDB connected!!!")
     }
 );
 
-const cors = require("cors");
-
-
-const initRoutes = require("./routes");
-
-var corsOptions = {
-  origin: "http://localhost:8081"
-};
-app.use(cors(corsOptions));
-
-
-
-// //bring in method override
-// const methodOverride = require('method-override');
-// const { Record } = require('./models/Record');
-
-
-
-
-// //set template engine
-
-// app.use(express.urlencoded({ extended: false }));
-// app.use(methodOverride('_method'));
-// //route for the index
-// app.get('/', async (request, response) => {
-//   let records = await Record.find().sort({ timeCreated: 'desc' });
-
-//   response.render('index', { records: records });
-// });
-
-// app.use(express.static('public'));
-// app.use('/records', recordsRouter);
-
-
-
-
-// // Validate server connection
-// app.listen(PORT, () => {
-//     console.log(`Discoid is running on port ${PORT}`);
-// })
-
-
-
-
-// var bodyParser = require('body-parser');
-// var fs = require('fs');
-// var path = require('path');
-// require('dotenv/config');
-// app.use(bodyParser.urlencoded({ extended: false }))
-// app.use(bodyParser.json())
-// app.set("view/signup engine", "ejs");
-
-// var multer = require('multer');
-
-// var storage = multer.diskStorage({
-// 	destination: (req, file, cb) => {
-// 		cb(null, 'uploads')
-// 	},
-// 	filename: (req, file, cb) => {
-// 		cb(null, file.fieldname + '-' + Date.now())
-// 	}
-// });
-
+// Validate server connection
+app.listen(PORT, () => {
+    console.log(`Discoid is running on port ${PORT}`);
+})

@@ -1,16 +1,7 @@
 // Require Models
 const {Record} = require("../models/Record");
-const {User} = require("../models/user");
+const {User} = require("../models/User");
 const {Payment} = require("../models/Payment");
-
-//possibles
-
-
-
-
-
-
-
 
 // Require Moment Library
 const moment = require('moment');
@@ -47,30 +38,39 @@ exports.user_show_get = (req, res) => {
 
 // UPDATE
 // HTTP GET - Load User Edit Form
-exports.user_edit_get = (req, res) => {
-    User.findById(req.query.id)
-    .then((user) => {
-        res.render("user/edit", {user})
-    })
-    .catch(err => {
-        console.log(err);
-    })
-}
+// exports.user_edit_get = (req, res) => {
+//     User.findById(req.query.id)
+//     .then((user) => {
+//         res.render("users/edit", {user})
+//     })
+//     .catch(err => {
+//         console.log(err);
+//     })
+// }
 
-//post
+// // HTTP PUT - User Update
+// exports.user_update_put = (req, res) => {
+//     console.log(req.body.id);
 
-exports.user_picture_post = ('/', upload.single('image'), (req, res, next) => {
+//     User.findByIdAndUpdate(req.body.id, req.body)
+//     .then(() => {
+//         res.redirect("/users/myaccount");
+//     })
+//     .catch(err => {
+//         console.log(err)
+//     })
+// }
 
 // DELETE
 // HTTP DELETE - User
-exports.user_delete_get = (req, res) => {
-    console.log(req.query.id);
+// exports.user_delete_get = (req, res) => {
+//     console.log(req.query.id);
 
-    User.findByIdAndDelete(req.query.id)
-    .then(() => {
-        res.redirect("/user/index");
-    })
-    .catch(err => {
-        console.log(err);
-    })
-}
+//     User.findByIdAndDelete(req.query.id)
+//     .then(() => {
+//         res.redirect("/users/myaccount");
+//     })
+//     .catch(err => {
+//         console.log(err);
+//     })
+// }

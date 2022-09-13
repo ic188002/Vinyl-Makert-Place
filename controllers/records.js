@@ -1,10 +1,10 @@
 //User Require Models
 const {Record} = require("../models/Record");
 const {User} = require("../models/User");
+var SpotifyWebApi = require('spotify-web-api-node');
 
 // Require Moment Library
 const moment = require('moment');
-
 
 // CRUD
 
@@ -97,6 +97,36 @@ exports.record_delete_get = (req, res) => {
     Record.findByIdAndDelete(req.query.id)
     .then(() => {
         res.redirect("/records/index");
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
+
+var spotifyApi = new SpotifyWebApi({
+    clientId: process.env.spotifyID,
+    clientSecret: process.env.spotifySecret,
+    redirectUri: `http://localhost:${process.env.PORT}`
+  });
+  
+  spotifyApi.clientCredentialsGrant().then(
+      function(data) {
+        console.log('The access token expires in ' + data.body['expires_in']);
+        console.log('The access token is ' + data.body['access_token']);
+        spotifyApi.setAccessToken(data.body['access_token']);
+      },
+      function(err) {
+        console.log('Something went wrong when retrieving an access token', err);
+      }
+  );
+
+// HTTP POST - Record
+exports.record_search_post = (req, res) => {
+    spotifyApi.searchAlbums("madlib", { limit: 10, offset: 20 })
+    .then(function(data) {
+        console.log(req.body)
+        console.log('Album information', data.body)
+        res.render("records/search", {data})
     })
     .catch(err => {
         console.log(err);

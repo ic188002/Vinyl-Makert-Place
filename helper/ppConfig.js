@@ -4,7 +4,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 
 // Require User Model
-const {User} = require("../models/user");
+const {User} = require("../models/User");
 
 // Serialze User
 // Save the data into the session
@@ -41,8 +41,3 @@ module.exports = passport;
 
 
 
-
-
-
-//exporting passport middleware
-module.exports = passport
