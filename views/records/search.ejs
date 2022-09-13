@@ -1,0 +1,20 @@
+<table class="table table-striped">
+    <tr>
+        <th> Artwork </th>
+        <th> Title </th>
+        <th> Artist </th>
+        <th> Release Date</th>
+    </tr>
+
+<% 
+const tmp = data.body.albums.items;
+const keys = Object.keys(data.body.albums.items);
+keys.forEach((key, index) => { %>
+    <tr>
+        <td><img src= <%= tmp[key].images[2].url %>/></td>
+        <td> <%= tmp[key].name %> </td>
+        <td> <%= tmp[key].artists[0].name %> </td>
+        <td> <%= tmp[key].release_date %> </td>
+    </tr>
+<% }) %>
+</table>

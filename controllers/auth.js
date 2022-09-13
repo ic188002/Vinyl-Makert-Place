@@ -1,5 +1,5 @@
 // Require User Model
-const {User} = require("../models/user");
+
 
 // Require Passport Configurations
 let passport = require("../helper/ppConfig");

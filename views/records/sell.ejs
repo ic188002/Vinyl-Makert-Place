@@ -1,7 +1,15 @@
 <h1> List your record </h1>
 
+<<<<<<< HEAD
 <form   class="mt-4" method="POST" action="/records/sell"  enctype="multipart/form-data">
+=======
+    <form class="form-inline" method="POST" action="/records/search">
+      <input  id="input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button  id="submit" class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+>>>>>>> e267009bcab66f38f6d99fe2f091a6c6c0cf0ab0
 
+<form method="POST" action="/records/sell">
 <div class="form-group">
     <label>Title</label>
     <input name="title" type="text" class="form-control"/>
@@ -26,12 +34,16 @@
     <label>Description</label>
     <textarea type="text" name="description" class="form-control"></textarea>
 </div>
+<<<<<<< HEAD
 <div class="form-group">
     <label>Album Cover</Picture></label>
     <input type="file" name="file" multiple id="input-files" class="form-control-file border"/>
 <br>
 
 <input type="text" name="user" value="<%= currentUser._id %>" />
+=======
+<input type="hidden" name="user" value="<%= currentUser._id %>" />
+>>>>>>> e267009bcab66f38f6d99fe2f091a6c6c0cf0ab0
 <button type="submit" class="btn btn-primary">
     List for sale
 </button>

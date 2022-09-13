@@ -11,15 +11,13 @@
     <div>Phone Number: <%= user.phoneNumber %></div>
     <div>Created At: <%= moment(user.createdAt).fromNow() %></div>
     <br/>
-    <% if(user.record) { %>
-    <% user.record.forEach(function(record) { %>
-      <hr/>
-      <div>
-        <div>Record: <%= record.title %> </div>
-        <div>Artist: <%= record.artist %> </div>
-        <div>Listed: <%= moment(record.createdAt).fromNow() %> </div>
-        <div> <% </div>
-      </div>
+  
+    <% user.article.forEach(function(records) { %>
+    <hr/>
+    <div>
+      <div>Record: <%= records.title %> </div>
+      <div>Artist: <%= records.artist %> </div>
+      <div>Listed: <%= records.createdAt %> </div>
     </div>
-      <% })} %>
-<br>
+    <% }) %>
+  </div>
