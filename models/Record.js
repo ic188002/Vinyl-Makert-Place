@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 
+
+
 // Schema
 const recordSchema = mongoose.Schema({
     title: String,
@@ -10,6 +12,10 @@ const recordSchema = mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
+    },
+    albumCover: {
+        data: Buffer,
+        contentType: String
     }
 
 },{timestamps: true});

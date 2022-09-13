@@ -1,3 +1,4 @@
+
 // API for our root route
 exports.index_get = (req, res) => {
     // res.send("Welcome to our Blog App");
