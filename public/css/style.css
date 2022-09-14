@@ -71,11 +71,7 @@ a:link {
        
 }
 
-.hero {
-    background-image: url("/photos/bar.png");
-    background-size: cover;
-    width: 100%;
-}
+
 /* .sign {
     float: right;
     background-image: url("/photos/bar.png");
@@ -92,7 +88,7 @@ a:link {
     
 } */
 .buy {
-    display: flex;
+    /* display: flex;
     flex-direction: row;
     justify-content: space-around;
     background-image: url("/photos/buy.png");
@@ -111,5 +107,11 @@ a:link {
     height: 100px;
     width: 180px;
     top: 80px;
-    left: 12%;
+    left: 12%;  */
+}
+nav {
+    background-color: rgb(181, 232, 164);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
 }

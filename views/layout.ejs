@@ -29,24 +29,21 @@
             </a>
         </div>
         <nav>
-            <div class="container">
-                <a href="/records/index" class="buy"></a>
-                <a href="/records/sell" class="sell"></a>
-            </div>
-            <div class="container">
-                <div class="sign">
-                    <% if(currentUser) { %>
-                        Hi <%= currentUser.firstName %>
-                            <a href="/auth/logout" class="logOut">Logout</a>
-                            <a href="/users/myaccount" class="myAccount">My Account</a>
-                            <% } else { %>
-
-                                <a href="/auth/signin" class="signIn">Sign In</a>
-                                <a href="/auth/signup" class="signUp">Signup</a>
-                                <% } %>
-                </div>
+            <a href="/records/index" class="btn btn-light">Buy Record</a>
+            <a href="/records/sell" class="btn btn-light">Sell Record</a>
+         
+                <% if(currentUser) { %>
+                    Hi <%= currentUser.firstName %>
+                        <a href="/auth/logout" class="logOut btn btn-light">Logout</a>
+                        <a href="/users/myaccount" class="myAccount btn btn-light">My Account</a>
+                        <% } else { %>
+                        <a href="/auth/signin" class="signIn btn btn-light">Sign In</a>
+                        <a href="/auth/signup" class="signUp btn btn-light">Signup</a>
+                         <% } %>
             </div>
         </nav>
+    </div>
+
     </div>
     <img src="/photos/albums.png " width="100%">
     <div class="container">
