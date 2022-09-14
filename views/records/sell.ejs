@@ -22,13 +22,9 @@
     <input name="releaseDate" type="date" class="form-control"/>
     </div>
 <% } else { %>
-    <%
-    let tidyTitleSell = populateSell.title;
-    tidyTitleSell = tidyTitleSell.replace(/^"(.+(?="$))"$/, '$1');
-    %>
     <div class="form-group">
         <label>Title</label>
-        <input name="title" type="text" class="form-control" value="<%= tidyTitleSell %>"/>
+        <input name="title" type="text" class="form-control" value="<%= tidyRecordTitle %>"/>
     </div>
     
     <div class="form-group">
