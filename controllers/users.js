@@ -38,28 +38,29 @@ exports.user_show_get = (req, res) => {
 
 // UPDATE
 // HTTP GET - Load User Edit Form
-// exports.user_edit_get = (req, res) => {
-//     User.findById(req.query.id)
-//     .then((user) => {
-//         res.render("users/edit", {user})
-//     })
-//     .catch(err => {
-//         console.log(err);
-//     })
-// }
+exports.user_edit_get = (req, res) => {
+    User.findById(req.query.id)
+    .then((user) => {
+        console.log(user);
+        res.render("users/edit", {user})
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
 
-// // HTTP PUT - User Update
-// exports.user_update_put = (req, res) => {
-//     console.log(req.body.id);
+// HTTP PUT - User Update
+exports.user_update_put = (req, res) => {
+    console.log(req.body.id);
 
-//     User.findByIdAndUpdate(req.body.id, req.body)
-//     .then(() => {
-//         res.redirect("/users/myaccount");
-//     })
-//     .catch(err => {
-//         console.log(err)
-//     })
-// }
+    User.findByIdAndUpdate(req.body.id, req.body)
+    .then(() => {
+        res.redirect("/users/myaccount");
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
 
 // DELETE
 // HTTP DELETE - User
