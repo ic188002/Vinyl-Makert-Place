@@ -13,26 +13,9 @@ const recordsCntrl = require("../controllers/records");
 // IsLoggedIn middleware
 const IsLoggedIn = require('../helper/isLoggedIn');
 
-
-const multer = require('multer');
-var storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-      cb(null, './public/albumCover/')
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now() + '-' + file.originalname)
-    }
-  })
-  let upload = multer({ storage: storage })
-
-
-
-
-
-
 // Routes
 router.get("/records/sell", IsLoggedIn, recordsCntrl.record_create_get);
-router.post("/records/sell", upload.single('image'), recordsCntrl.record_create_post);
+router.post("/records/sell", recordsCntrl.record_create_post);
 router.get("/records/index", recordsCntrl.record_index_get);
 router.get("/records/detail", recordsCntrl.record_show_get);
 router.get("/records/delete", IsLoggedIn, recordsCntrl.record_delete_get);
