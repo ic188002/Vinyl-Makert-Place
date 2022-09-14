@@ -21,36 +21,38 @@
 <body>
     <!-- <img class="temp" src="./Untitled_Artwork 8.png"> -->
 
-        <div class="container">
-            HEADER
-        </div>
 
+    <div class="hero">
         <div class="container title">
-            <h1><a href="/">Discoid</a></h1>
+            <a href="/">
+                <img src="/photos/header.png" width="100%">
+            </a>
         </div>
-        <div class="container">
-            <a href="/records/index" class="navbar-brand">Buy Records</a>
-            <a href="/records/sell" class="navbar-brand">Sell Records</a>
-        </div>
-        <div class="container">
-            <div class="sign">
+        <nav>
+            <a href="/records/index" class="btn btn-light">Buy Record</a>
+            <a href="/records/sell" class="btn btn-light">Sell Record</a>
+         
                 <% if(currentUser) { %>
                     Hi <%= currentUser.firstName %>
-                        <a href="/auth/logout" class="btn btn-outline-primary">Logout</a>
-                        <a href="/users/myaccount" class="btn btn-outline-primary">My Account</a>
+                        <a href="/auth/logout" class="logOut btn btn-light">Logout</a>
+                        <a href="/users/myaccount" class="myAccount btn btn-light">My Account</a>
                         <% } else { %>
-
-                            <a href="/auth/signin" class="btn btn-outline-primary">Sign In</a>
-                            <a href="/auth/signup" class="btn btn-outline-primary">Signup</a>
-                            <% } %>
+                        <a href="/auth/signin" class="signIn btn btn-light">Sign In</a>
+                        <a href="/auth/signup" class="signUp btn btn-light">Signup</a>
+                         <% } %>
             </div>
-        </div>
-        <div class="container">
-            <%- body %>
-        </div>
-        <div class="container">
-            FOOTER
-        </div>
+        </nav>
+    </div>
+
+    </div>
+    <img src="/photos/albums.png " width="100%">
+    <div class="container">
+        <%- body %>
+    </div>
+
+    <div class="footer">
+        <img src="/photos/footer.png" width="100%">
+    </div>
 
     <script>
         $(document).ready(function () {
