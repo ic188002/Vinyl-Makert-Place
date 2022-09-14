@@ -6,12 +6,12 @@
         <th> Release Date</th>
         <th></th>
     </tr>
-
-<% 
-const tmp = data.body.albums.items;
-const keys = Object.keys(data.body.albums.items);
-keys.forEach((key, index) => {
-let img = (tmp[key].images[2].url).replace(/\/+$/,"") %>
+    <% 
+        const tmp = data.albums.items;
+        const keys = Object.keys(data.albums.items);
+        keys.forEach((key, index) => {
+        let img = (tmp[key].images[2].url).replace(/\/+$/,"")
+    %>
     <tr>
         <td><img src= <%= img %> /></td>
         <td> <%= tmp[key].name %> </td>
@@ -19,21 +19,20 @@ let img = (tmp[key].images[2].url).replace(/\/+$/,"") %>
         <td> <%= tmp[key].release_date %> </td>
         <td> <a href="/records/sell?title=<%= JSON.stringify(tmp[key].name) %>&artist=<%=tmp[key].artists[0].name%>&releaseDate=<%= tmp[key].release_date %>">SELECT</a></td>
     </tr>
-<% }) %>
+    <% }) %>
 </table>
-
-<% if(data.body.albums.offset === 0){ %>
-<form action="/records/next" method="post">
-    <input name="next" type="hidden" value= <%= data.body.albums.next %>>
-    <button type="submit" class="btn btn-primary">Next</button>
-</form>
+<% if(data.albums.offset === 0){ %>
+    <form action="/records/next" method="post">
+        <input name="next" type="hidden" value= <%= data.albums.next %>>
+        <button type="submit" class="btn btn-primary">Next</button>
+    </form>
 <% } else { %>
     <form action="/records/prev" method="post">
-        <input name="prev" type="hidden" value= <%= data.body.albums.previous %>>
+        <input name="prev" type="hidden" value= <%= data.albums.previous %>>
         <button type="submit" class="btn btn-primary">Prev</button>
     </form>
     <form action="/records/next" method="post">
-        <input name="next" type="hidden" value= <%= data.body.albums.next %>>
+        <input name="next" type="hidden" value= <%= data.albums.next %>>
         <button type="submit" class="btn btn-primary">Next</button>
     </form>
 <% } %>
