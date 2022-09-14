@@ -1,15 +1,21 @@
-<div class="profile">
-  
-    <div>
-      <br>
-      <h3> <%= user.firstName %> Profile</h3>
-<br>
-
-    <div>
-    <img class="img" src= "<%=user.profilePicture%>"  width= "300" height="300"></div>
-    <div>Email Address: <%= user.emailAddress %></div>
-    <div>Phone Number: <%= user.phoneNumber %></div>
-    <div>Created At: <%= moment(user.createdAt).fromNow() %></div>
-    <br/>
-    </div>
 </div>
+<br> <br> <br> <br> <br> <br> <br>
+<div class="backgroundProfile">
+  <h3>
+    <%= user.firstName %> Profile
+  </h3>
+  <br>
+  <div>
+
+    <img class="img" src="<%=user.profilePicture%>" width="300" height="300">
+    <div>Email Address: <%= user.emailAddress %>
+    </div>
+    <div>Phone Number: <%= user.phoneNumber %>
+    </div>
+    <div>Created At: <%= moment(user.createdAt).fromNow() %>
+    </div>
+    <a href="/users/edit">Edit Profile</a>
+    <div>
+    </div>
+    <hr />
+  </div>

@@ -1,0 +1,50 @@
+<h1> Edit Profile</h1>
+
+<form method="POST" action="/users/update?_method=PUT" enctype="multipart/form-data">
+
+    <div class="form-group">
+        <label>First Name</label>
+        <input class="form-control" name="firstName" type="text" value="<%= user.firstName %>" />
+    </div>
+    <div class="form-group">
+        <label>Last Name</label>
+        <input class="form-control" name="lastName" type="text" value="<%= user.lastName %>" />
+    </div>
+
+    <div class="form-group">
+        <label>Email Address</label>
+        <input class="form-control" name="emailAddress" type="email" value="<%= user.emailAddress %>" />
+    </div>
+    <div class="form-group">
+        <label>Phone Number</label>
+        <input class="form-control" name="phoneNumber" type="string" value="<%= user.phoneNumber %>" />
+    </div>
+    <div class="form-group">
+        <label>Street Name</label>
+        <input class="form-control" name="shippingAddress.streetName" type="text" value="<%= user.streetName %>" />
+    </div>
+    <div class="form-group">
+        <label>Town / City</label>
+        <input class="form-control" name="shippingAddress.townCity" type="text" value="<%= user.townCity %>" />
+    </div>
+    <div class="form-group">
+        <label>House Number</label>
+        <input class="form-control" name="shippingAddress.houseNumber" type="number" value="<%= user.houseNumber %>" />
+    </div>
+    <div class="form-group">
+        <label>Post Code</label>
+        <input class="form-control" name="shippingAddress.postcode" type="text" value="<%= user.postcode %>" />
+    </div>
+    <div class="form-group">
+        <label>Condition</label>
+        <input class="form-control" name="profilePicture" type="file" id="input-files" value="<%= user.profilePicture %>" />
+    </div>
+
+
+
+    <input type="hidden" name="id" value="<%= user._id %>" />
+    <button type="submit" class="btn btn-primary">
+        Update Profile
+    </button>
+
+</form>

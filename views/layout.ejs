@@ -21,36 +21,41 @@
 <body>
     <!-- <img class="temp" src="./Untitled_Artwork 8.png"> -->
 
-        <div class="container">
-            HEADER
-        </div>
 
+    <div class="hero">
         <div class="container title">
-            <h1><a href="/">Discoid</a></h1>
+            <a href="/">
+                <img src="/photos/header.png" width="100%">
+            </a>
         </div>
-        <div class="container">
-            <a href="/records/index" class="navbar-brand">Buy Records</a>
-            <a href="/records/sell" class="navbar-brand">Sell Records</a>
-        </div>
-        <div class="container">
-            <div class="sign">
-                <% if(currentUser) { %>
-                    Hi <%= currentUser.firstName %>
-                        <a href="/auth/logout" class="btn btn-outline-primary">Logout</a>
-                        <a href="/users/myaccount" class="btn btn-outline-primary">My Account</a>
-                        <% } else { %>
-
-                            <a href="/auth/signin" class="btn btn-outline-primary">Sign In</a>
-                            <a href="/auth/signup" class="btn btn-outline-primary">Signup</a>
-                            <% } %>
+        <nav>
+            <div class="container">
+                <a href="/records/index" class="buy"></a>
+                <a href="/records/sell" class="sell"></a>
             </div>
-        </div>
-        <div class="container">
-            <%- body %>
-        </div>
-        <div class="container">
-            FOOTER
-        </div>
+            <div class="container">
+                <div class="sign">
+                    <% if(currentUser) { %>
+                        Hi <%= currentUser.firstName %>
+                            <a href="/auth/logout" class="logOut">Logout</a>
+                            <a href="/users/myaccount" class="myAccount">My Account</a>
+                            <% } else { %>
+
+                                <a href="/auth/signin" class="signIn">Sign In</a>
+                                <a href="/auth/signup" class="signUp">Signup</a>
+                                <% } %>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <img src="/photos/albums.png " width="100%">
+    <div class="container">
+        <%- body %>
+    </div>
+
+    <div class="footer">
+        <img src="/photos/footer.png" width="100%">
+    </div>
 
     <script>
         $(document).ready(function () {
