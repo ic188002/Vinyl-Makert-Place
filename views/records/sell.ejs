@@ -1,0 +1,67 @@
+<h1> List your record </h1>
+
+    <form class="form-inline" method="POST" action="/records/search?offset=0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+      <button class="btn btn-primary my-2 my-sm-0" type="submit" name="submit">Search</button>
+    </form>
+
+<form method="POST" action="/records/sell">
+<% if(!data){ %>
+    <div class="form-group">
+        <label>Title</label>
+        <input name="title" type="text" class="form-control"/>
+    </div>
+    
+    <div class="form-group">
+        <label>Artist</label>
+        <input name="artist" class="form-control"></input>
+    </div>
+    
+    <div class="form-group">
+        <label>Release Date</label> 
+    <input name="releaseDate" type="date" class="form-control"/>
+    </div>
+<% } else { %>
+    <%
+    let tidyTitleSell = (populateSell.title).replace(/^"(.+(?="$))"$/, '$1');
+    console.log(tidyTitleSell)
+    %>
+    <div class="form-group">
+        <label>Title</label>
+        <input name="title" type="text" class="form-control" value="<%= tidyTitleSell %>"/>
+    </div>
+    
+    <div class="form-group">
+        <label>Artist</label>
+        <input name="artist" class="form-control"  value="<%= populateSell.artist %>"/>
+    </div>
+    
+    <div class="form-group">
+        <label>Release Date</label> 
+    <input name="releaseDate" type="date" class="form-control"  value="<%= populateSell.releaseDate %>"/>
+    </div>
+<% } %>
+<div class="form-group">
+    <label>Asking Price</label> 
+<input name="askingPrice" type="number" class="form-control"/>
+</div>
+
+<div class="form-group">
+    <label>Condition</label>
+    <input type="text" name="condition" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label>Description</label>
+    <textarea type="text" name="description" class="form-control"></textarea>
+</div>
+<div class="form-group">
+    <label>Album Cover</label>
+    <textarea type="file" name="AlbumCover" class="form-control"></textarea>
+</div>
+<input type="hidden" name="user" value="<%= currentUser._id %>" />
+<button type="submit" class="btn btn-primary">
+    List for sale
+</button>
+
+</form>

@@ -1,0 +1,26 @@
+
+<h1> Records </h1>
+
+<table class="table table-striped">
+    <tr>
+        <th> Title </th>
+        <th> Artist </th>
+        <th> Release Date </th>
+        <th> Condition </th>
+        <th> Description </th>
+        <th> Created At </th>
+    </tr>
+
+<% records.forEach(function(record){ %>  
+    <tr>
+        <td> <a href="/records/detail?id=<%= record._id %>"> <h3><%= record.title %></h3> </a> </td>
+        <td> <%= record.artist %></td>
+        <td> <%= record.releaseDate %></td>
+        <td> <%= record.condition %></td>
+        <td> <%= record.description %></td>
+        <td> <%= moment(record.createdAt).fromNow() %></td>
+    </tr>
+<% }) %>
+
+
+</table>
