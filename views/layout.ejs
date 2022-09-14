@@ -21,28 +21,26 @@
 <body>
     <!-- <img class="temp" src="./Untitled_Artwork 8.png"> -->
 
-        <div class="container">
-            HEADER
-        </div>
-
+    <img src="/photos/header.png" width="100%">
+    <div class="hero">
         <div class="container title">
-            <h1><a href="/">Discoid</a></h1>
+            <a href="/">
+              
+                
+            </a>
         </div>
-        <div class="container">
-            <a href="/records/index" class="navbar-brand">Buy Records</a>
-            <a href="/records/sell" class="navbar-brand">Sell Records</a>
-        </div>
-        <div class="container">
-            <div class="sign">
+        <nav>
+            <a href="/records/index" class=" nav btn btn-light">Buy Record</a>
+            <a href="/records/sell" class="nav btn btn-light">Sell Record</a>
+         
                 <% if(currentUser) { %>
-                    Hi <%= currentUser.firstName %>
-                        <a href="/auth/logout" class="btn btn-outline-primary">Logout</a>
-                        <a href="/users/myaccount" class="btn btn-outline-primary">My Account</a>
+                    <h2>Welcome <%= currentUser.firstName %></h2>
+                        <a href="/auth/logout" class="nav btn btn-light">Logout</a>
+                        <a href="/users/myaccount" class="nav btn btn-light">My Account</a>
                         <% } else { %>
-
-                            <a href="/auth/signin" class="btn btn-outline-primary">Sign In</a>
-                            <a href="/auth/signup" class="btn btn-outline-primary">Signup</a>
-                            <% } %>
+                        <a href="/auth/signin" class="nav btn btn-light">Sign In</a>
+                        <a href="/auth/signup" class="nav btn btn-light">Signup</a>
+                         <% } %>
             </div>
         </div>
         <div class="container">
