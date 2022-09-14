@@ -15,7 +15,7 @@ const recordSchema = mongoose.Schema({
         ref: 'User'
     },
     albumCover: {
-        contentType: String
+        type: String
     }
 
 },{timestamps: true});

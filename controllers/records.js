@@ -37,9 +37,10 @@ exports.record_create_post = (req, res) => {
     console.log(req.body);
     console.log(req.file);
     let imagePath = '/albumCover/' + req.file.filename;
+    record.albumCover= imagePath;
     record.save()
     .then(() => {
-        console.log(req.body.user);
+        console.log(req.body.record);
             User.findById(req.body.user, (error, user) => {
                 user.record.push(record);
                 user.save();
