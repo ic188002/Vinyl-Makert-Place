@@ -9,6 +9,7 @@ const recordSchema = mongoose.Schema({
     description: String,
     condition: String,
     releaseDate: String,
+    askingPrice: Number,
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
