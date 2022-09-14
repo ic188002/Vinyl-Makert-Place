@@ -5,30 +5,15 @@
       <button class="btn btn-primary my-2 my-sm-0" type="submit" name="submit">Search</button>
     </form>
 
-
-<form method="POST" action="/records/sell" enctype="multipart/form-data">
-
+<form method="POST" action="/records/sell">
 <% if(!populateSell){ %>
-    <div class="form-group">
-        <label>Title</label>
-        <input name="title" type="text" class="form-control"/>
-    </div>
-    
-    <div class="form-group">
-        <label>Artist</label>
-        <input name="artist" class="form-control"></input>
-    </div>
-    
-    <div class="form-group">
-        <label>Release Date</label> 
-    <input name="releaseDate" type="date" class="form-control"/>
-    </div>
+
 <% } else { %>
     <div class="form-group">
         <label>Title</label>
-        <input name="title" type="text" class="form-control" value="<%= tidyRecordTitle %>"/>
+        <input name="title" type="text" class="form-control" value="<%= populateSell.title %>"/>
     </div>
-    
+
     <div class="form-group">
         <label>Artist</label>
         <input name="artist" class="form-control"  value="<%= populateSell.artist %>"/>
@@ -39,7 +24,6 @@
     <input name="releaseDate" type="date" class="form-control"  value="<%= populateSell.releaseDate %>"/>
     </div>
 <% } %>
-
 <div class="form-group">
     <label>Asking Price</label> 
 <input name="askingPrice" type="number" class="form-control"/>
@@ -56,7 +40,7 @@
 </div>
 <div class="form-group">
     <label>Album Cover</label>
-    <input type="file" name="image" id="input-files" class="form-control"/>
+    <textarea type="file" name="AlbumCover" class="form-control"></textarea>
 </div>
 <input type="hidden" name="user" value="<%= currentUser._id %>" />
 <button type="submit" class="btn btn-primary">

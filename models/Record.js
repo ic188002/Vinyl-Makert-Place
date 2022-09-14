@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+
 
 
 // Schema
@@ -15,6 +15,7 @@ const recordSchema = mongoose.Schema({
         ref: 'User'
     },
     albumCover: {
+        data: Buffer,
         contentType: String
     }
 

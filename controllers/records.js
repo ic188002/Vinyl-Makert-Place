@@ -8,9 +8,6 @@ const axios = require('axios')
 const moment = require('moment');
 const { application } = require("express");
 
-
-var fs = require('fs');
-
 // CRUD
 
 // CREATE
@@ -34,9 +31,6 @@ exports.record_create_get = (req, res) => {
 exports.record_create_post = (req, res) => {
     // Saving the data into the Database
     let record = new Record(req.body);
-    console.log(req.body);
-    console.log(req.file);
-    let imagePath = '/albumCover/' + req.file.filename;
     record.save()
     .then(() => {
         console.log(req.body.user);
