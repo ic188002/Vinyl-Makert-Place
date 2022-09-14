@@ -6,7 +6,7 @@
     </form>
 
 <form method="POST" action="/records/sell">
-<% if(!populateSell){ %>
+<% if(!data){ %>
     <div class="form-group">
         <label>Title</label>
         <input name="title" type="text" class="form-control"/>
@@ -22,9 +22,13 @@
     <input name="releaseDate" type="date" class="form-control"/>
     </div>
 <% } else { %>
+    <%
+    let tidyTitleSell = (populateSell.title).replace(/^"(.+(?="$))"$/, '$1');
+    console.log(tidyTitleSell)
+    %>
     <div class="form-group">
         <label>Title</label>
-        <input name="title" type="text" class="form-control" value="<%= populateSell.title %>"/>
+        <input name="title" type="text" class="form-control" value="<%= tidyTitleSell %>"/>
     </div>
     
     <div class="form-group">

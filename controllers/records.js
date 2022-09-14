@@ -15,11 +15,13 @@ const { application } = require("express");
 exports.record_create_get = (req, res) => {
     User.find()
     .then((users) => {
-        if(!req.query){
-            res.render("records/sell", {users})
+        if(req.query.title == null || req.query.title == "" || req.query.title == undefined){
+            console.log(req.query + "No q params");
+            res.render("records/sell", {users, data:false})
         } else {
+            console.log(req.query + "Q params");
             let populateSell = req.query
-            res.render("records/sell", {users, populateSell})
+            res.render("records/sell", {users, populateSell, data:true})
         }
     })
     .catch((err) => {
