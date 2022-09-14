@@ -28,25 +28,27 @@
                 <img src="/photos/header.png" width="100%">
             </a>
         </div>
-        <div class="container">
-            <a href="/records/index" class="btn btn-light">Buy Records</a>
-            <a href="/records/sell" class="btn btn-light">Sell Records</a>
-        </div>
-        <div class="container">
-            <div class="sign">
-                <% if(currentUser) { %>
-                    Hi <%= currentUser.firstName %>
-                        <a href="/auth/logout" class="btn btn-light">Logout</a>
-                        <a href="/users/myaccount" class="btn btn-light">My Account</a>
-                        <% } else { %>
-                          
-                            <a href="/auth/signin" class="btn btn-light">Sign In</a>
-                            <a href="/auth/signup" class="btn btn-light">Signup</a>
-                            <% } %>
+        <nav>
+            <div class="container">
+                <a href="/records/index" class="buy"></a>
+                <a href="/records/sell" class="sell"></a>
             </div>
-        </div>
+            <div class="container">
+                <div class="sign">
+                    <% if(currentUser) { %>
+                        Hi <%= currentUser.firstName %>
+                            <a href="/auth/logout" class="logOut">Logout</a>
+                            <a href="/users/myaccount" class="myAccount">My Account</a>
+                            <% } else { %>
+
+                                <a href="/auth/signin" class="signIn">Sign In</a>
+                                <a href="/auth/signup" class="signUp">Signup</a>
+                                <% } %>
+                </div>
+            </div>
+        </nav>
     </div>
-    <img src="/photos/hero.png " width="100%">
+    <img src="/photos/albums.png " width="100%">
     <div class="container">
         <%- body %>
     </div>

@@ -3,20 +3,12 @@
 body {
     background-color: rgb(255, 255, 255);
     margin: auto;
- 
-    
-
-
 }
-
 #head {
-    
-
     margin-left: auto;
     margin-right: auto;
     display: flex;
     justify-content: center;
-    
 }
 #topLine {
     margin-left: auto;
@@ -42,10 +34,6 @@ h1 {
 a:link {
     text-decoration: none;
   }
-.title {
-
-}
-
 .profile {
     display: flex;
     flex-direction: column;
@@ -88,6 +76,40 @@ a:link {
     background-size: cover;
     width: 100%;
 }
-.sign {
+/* .sign {
     float: right;
+    background-image: url("/photos/bar.png");
+} */
+
+/* .signUp {
+        position: absolute;
+    background-image: url("/photos/buy.png");
+    background-size: contain;
+    height: 100px;
+    width: 180px;
+    top: 80px;
+    left: 24%;
+    
+} */
+.buy {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-image: url("/photos/buy.png");
+    background-size: contain;
+    height: 100px;
+    width: 180px;
+    top: 80px;
+    left: 24%;
+}
+.sell {
+ display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-image: url("/photos/sell.png");
+    background-size: contain;
+    height: 100px;
+    width: 180px;
+    top: 80px;
+    left: 12%;
 }
