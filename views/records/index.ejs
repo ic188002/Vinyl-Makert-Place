@@ -24,3 +24,28 @@
 
 
 </table>
+
+
+
+
+
+<div class="row">
+    <div class="col-sm-4 my-4">
+    @if(count($record) > 0)
+    @foreach($record as $record)
+<div class="col-sm-4 my-4">
+    <div class="card">
+        <img class="card-img-top" src="<record.albumCover%>" alt="Unable">
+        <div class="card-body">
+            <h2 class="card-title">{{$record->title}}</h2>
+            <p class="card-text">{!!$record->artist!!}</p>
+        </div>        
+    </div>
+</div>
+    @endforeach
+@else
+<p>No Members Found</p>
+@endif
+</div>
+
+</div>
