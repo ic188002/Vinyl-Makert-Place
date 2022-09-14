@@ -1,8 +1,8 @@
-
 <h1> Records </h1>
 
 <table class="table table-striped">
     <tr>
+        <th> Album Cover </th>
         <th> Title </th>
         <th> Artist </th>
         <th> Release Date </th>
@@ -13,6 +13,7 @@
 
 <% records.forEach(function(record){ %>  
     <tr>
+        <td>  <img class="albumCover" src="<%=record.albumCover%>" width="50" height="50">
         <td> <a href="/records/detail?id=<%= record._id %>"> <h3><%= record.title %></h3> </a> </td>
         <td> <%= record.artist %></td>
         <td> <%= record.releaseDate %></td>

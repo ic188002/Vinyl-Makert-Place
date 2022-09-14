@@ -1,4 +1,7 @@
 <h2> <%= record.title %> </h2>
+<div> 
+    <img class="albumCover" src="<%=record.albumCover%>" width="300" height="300">
+</div>
 <div>
     Artist: <%= record.artist %>
 </div>
@@ -26,4 +29,3 @@
 <div>
    UpdatedAt: <%= moment(record.updatedAt).fromNow() %>
 </div>
-
