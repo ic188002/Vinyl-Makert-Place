@@ -11,7 +11,11 @@ body {
 
 }
 .welcome {
-    color: rgb(255, 255, 255);
+    color:  rgb(255, 176, 196);
+    background-color: white;
+    padding: 10px;
+    border-radius: 30px;
+    
     
 }
 #head {
@@ -25,11 +29,10 @@ body {
     margin-right: auto;
     display: flex;
     justify-content: center;
- 
     width:100%; height:100%;
 }
 .nav{
-  
+
     padding: 10px;
     text-align: center;
     font-weight: 200;
@@ -66,7 +69,7 @@ a:link {
     align-items: center;
     flex-direction: column;
     padding: 20px;
-    background-color:rgb(181, 232, 164);
+    background-color:rgb(255, 176, 196);
     border-radius: 55px;
     text-align: center;
     color: white;
@@ -81,7 +84,7 @@ a:link {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background-color: rgb(181, 232, 164);
+    background-color: rgb(188, 244, 222);
     /* background-color: brown; */
     
 }
@@ -108,7 +111,7 @@ a:link {
 
 
 nav {
-    background-color: rgb(181, 232, 164);
+    background-color: rgb(188, 244, 222);
     display: flex;
     justify-content: space-evenly;
     padding: 10px;
@@ -143,15 +146,24 @@ nav {
 }
 
 .cardbody {
-    background-color:  rgb(181, 232, 164);
+    background-color:  rgb(188, 244, 222);
     text-align: center;
 
 }
 .price {
-    background-color: rgb(137, 210, 163);
+    background-color: rgb(188, 244, 2223);
     text-align: center;
 }
 .buyindex {
-    background-color: rgb(255, 200, 196);
+    background-color: rgb(222, 214, 209);
     padding: 3px;
+}
+
+.profilePic {
+    position: absolute;
+    right: 25px;
+    top: 5px;
+    padding: 5px;
+    border-radius: 100%;
+    border: solid white 2px;
 }
