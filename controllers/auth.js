@@ -27,9 +27,11 @@ exports.auth_signup_post = (req, res) => {
     let user = new User(req.body);
     console.log(req.body);
     console.log(req.file);
-    let imagPath = '/uploads/' + req.file.filename;
+    
+    if (req.file!==undefined) {
+        let imagPath = '/uploads/' + req.file.filename;
     user.profilePicture= imagPath;
-      
+    }
  
     let hash = bcrypt.hashSync(req.body.password, salt);
     console.log(hash);
