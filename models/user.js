@@ -63,11 +63,9 @@ const userSchema = mongoose.Schema({
 
 userSchema.methods.verifyPassword = function(password){
     console.log('password from User' + password);
-    console.log('password from DataBase' + this.password);
+    console.log('password from DataBase' + this.password);;
     return bcrypt.compareSync(password, this.password)
 }
-
-
 
 const User = mongoose.model('User', userSchema)
 
