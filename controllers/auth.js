@@ -68,3 +68,31 @@ exports.auth_logout_get = (req, res) => {
     res.redirect("/auth/signin");
    }) 
 }
+
+
+exports.auth_edit_get = (req, res) => {
+    User.findById(req.query.id)
+    .then((user) => {
+        console.log(user);
+        res.render("users/changePassword", {user})
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
+
+
+
+
+exports.auth_update_put = (req, res) => {
+    console.log(req.body.id);
+
+    User.findByIdAndUpdate(req.body.id, req.body)
+    .then(() => {
+        res.redirect("/users/myaccount");
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
+
