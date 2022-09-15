@@ -4,24 +4,24 @@
 
     <div class="form-group">
         <label>Title</label>
-        <input class="form-control" name="title" type="text" value="<%= record.title %>" />
+        <input class="form-control input" name="title" type="text" value="<%= record.title %>" />
     </div>
     <div class="form-group">
         <label>Artist</label>
-        <input class="form-control" name="artist" type="text" value="<%= record.artist %>" />
+        <input class="form-control input" name="artist" type="text" value="<%= record.artist %>" />
     </div>
 
     <div class="form-group">
         <label>Release Date</label>
-        <input class="form-control" name="releaseDate" type="date" value="<%= record.releaseDate %>" />
+        <input class="form-control input" name="releaseDate" type="date" value="<%= record.releaseDate %>" />
     </div>
     <div class="form-group">
         <label>Condition</label>
-        <input class="form-control" name="condition" type="text" value="<%= record.condition %>" />
+        <input class="form-control input" name="condition" type="text" value="<%= record.condition %>" />
     </div>
     <div class="form-group">
         <label>Description</label>
-        <textarea class="form-control" name="description"> <%= record.description %> </textarea>
+        <textarea class="form-control input" name="description"> <%= record.description %> </textarea>
     </div>
     <input type="hidden" name="id" value="<%= record._id %>" />
     <button type="submit" class="btn btn-primary">
