@@ -37,4 +37,7 @@ router.post("/records/search", recordsCntrl.record_search_post);
 router.post("/records/next", recordsCntrl.record_next_post);
 router.post("/records/prev", recordsCntrl.record_prev_post);
 
+
+router.get("/records/index", recordsCntrl.record_show_get);
+
 module.exports = router;
