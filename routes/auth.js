@@ -1,6 +1,3 @@
-
-
-
 const router = require('express').Router();
 
 const authCntrl = require("../controllers/auth");

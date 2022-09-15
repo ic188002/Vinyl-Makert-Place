@@ -31,6 +31,7 @@ const indexRouter = require('./routes/index');
 const recordsRouter = require('./routes/records');
 const userRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
+const cartRouter = require('./routes/cart');
 
 // Look into views folder for the file named as layout.ejs
 app.use(expressLayouts);
@@ -39,12 +40,17 @@ app.use(expressLayouts);
 let session = require('express-session');
 let passport = require('./helper/ppConfig');
 const { use } = require('./helper/ppConfig');
+const MongoStore = require('connect-mongo');
 
 app.use(session({
     secret: process.env.SECRET,
     saveUninitialized: true,
     resave: false,
-    cookie: {maxAge: 3600000}
+    cookie: {maxAge: 3600000},
+    store: MongoStore.create({
+        mongoUrl: process.env.MongoDBURL 
+        // mongooseConnection: mongoose.connection
+    })
 }))
 
 // Initialze passport and passport session
@@ -55,6 +61,7 @@ app.use(passport.session());
 app.use(function(req, res, next){
     res.locals.currentUser = req.user;
     res.locals.alerts = req.flash();
+    res.locals.session = req.session; //ASK SAAD WHETHER THIS IS SECURE OR NOT
     next();
 })
 
@@ -63,6 +70,7 @@ app.use('/', indexRouter);
 app.use('/', recordsRouter);
 app.use('/', userRouter);
 app.use('/', authRouter);
+app.use('/', cartRouter);
 
 // NodeJS will look in a folder called views/ for all EJS related files.
 app.set("view engine", "ejs");

@@ -9,6 +9,7 @@
         <th> Condition </th>
         <th> Description </th>
         <th> Created At </th>
+        <th></th>
     </tr>
 
 <% records.forEach(function(record){ %>  
@@ -19,6 +20,7 @@
         <td> <%= record.condition %></td>
         <td> <%= record.description %></td>
         <td> <%= moment(record.createdAt).fromNow() %></td>
+        <td><a href="/cart/add/<%= record._id %>">BUY</a></td>
     </tr>
 <% }) %>
 
