@@ -1,12 +1,12 @@
 <div class=" sam row row-cols-3">
 
+
     <% records.forEach(function(record){ %>
         <div class="cols">
             <div class="card">
                 <img class="card-img-top" src="<%= record.albumCover%>" alt="Card image cap" width="150px" height="350px">
                 <div class="card-body">
-                    <h5 class="card-title">
-                        <%= record.title %>
+                    <h5 class="card-title"><a href="/records/detail?id=<%= record._id %>"></a><%= record.title %>
                     </h5>
                     <p class="card-text">
                         <%= record.artist %>
@@ -15,7 +15,10 @@
                 <div class="card-footer">
                     <small class="text-muted">£<%= record.askingPrice %></small>
                 </div>
+                <div class='buy'>
+                <h4><a  href="/cart/add/<%= record._id %>">BUY</a></h4>
             </div>
+        </div>
         </div>
         <% }) %>
 </div>

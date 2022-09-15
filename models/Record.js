@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
 
-
-
 // Schema
 const recordSchema = mongoose.Schema({
     title: String,

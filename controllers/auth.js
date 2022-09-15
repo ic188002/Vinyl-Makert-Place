@@ -70,7 +70,7 @@ exports.auth_logout_get = (req, res) => {
 }
 
 
-exports.auth_edit_get = (req, res) => {
+exports.password_change_get = (req, res) => {
     User.findById(req.query.id)
     .then((user) => {
         console.log(user);
@@ -84,10 +84,17 @@ exports.auth_edit_get = (req, res) => {
 
 
 
-exports.auth_update_put = (req, res) => {
+exports.password_update_put = (req, res) => {
     console.log(req.body.id);
 
     User.findByIdAndUpdate(req.body.id, req.body)
+    console.log(req.body)
+    let hash = bcrypt.hashSync(req.body.password, salt);
+    console.log(hash);
+
+    user.password = hash;
+
+    user.save()
     .then(() => {
         res.redirect("/users/myaccount");
     })

@@ -1,6 +1,3 @@
-
-
-
 const router = require('express').Router();
 
 const authCntrl = require("../controllers/auth");
@@ -25,9 +22,9 @@ router.post("/auth/signin", authCntrl.auth_signin_post);
 
 router.get("/auth/logout", authCntrl.auth_logout_get);
 
-router.put("/auth/update", authCntrl.auth_update_put);
+router.get("/users/changePassword", authCntrl.password_change_get);
+router.put("/users/updatePassword", authCntrl.password_update_put);
 
-router.put("/auth/changePassword", authCntrl.auth_edit_get);
 
 
 module.exports = router
