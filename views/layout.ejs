@@ -29,7 +29,7 @@
     <a href="/">
         <h1 class="header">DISCOID</h1>
     </a>
-    <a href="/carts/index"><img class="cart" src="/photos/cart.png" width="150px"></a>
+    <a href="/carts/index"></a><img class="cart" src="/photos/cart.png" width="150px"></a>
     <img class="logo" src="/photos/logo.png" width="100px">
     
     
@@ -51,7 +51,7 @@
         <div class="welcome">
             <% if(currentUser) { %>
                 <h3>Welcome <%= currentUser.firstName %><a href="/users/myaccount" class=""><img class="profilePic"
-                                src="<%=currentUser.profilePicture%>" width="100px"></a></h3>
+                                src="<%=currentUser.profilePicture%>" width="80px"></a></h3>
         </div>
         <span>
             <p><a href="/auth/logout" class="">Logout</a></p>
@@ -60,12 +60,16 @@
             <p><a href="/users/myaccount" class="">My Account</a></p>
         </span>
         <% } else { %>
+        </div>
             <span>
                 <p><a href="/auth/signin" class="">Sign In</a></p>
             </span>
+      
             <span>
                 <p><a href="/auth/signup" class="">Signup</a></p>
             </span>
+
+
             <% } %>
                 </div>
                 </div>
