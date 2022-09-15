@@ -22,4 +22,9 @@ router.post("/auth/signin", authCntrl.auth_signin_post);
 
 router.get("/auth/logout", authCntrl.auth_logout_get);
 
+router.get("/users/changePassword", authCntrl.password_change_get);
+router.put("/users/updatePassword", authCntrl.password_update_put);
+
+
+
 module.exports = router
