@@ -1,6 +1,7 @@
 body {
     background-color: rgb(255, 255, 255);
     margin: auto;
+    font-family: 'Josefin Sans', sans-serif;
 }
 .header {
     color: aquamarine;
@@ -11,6 +12,7 @@ body {
 
 }
 .welcome {
+    
     color:  rgb(255, 176, 196);
     background-color: white;
     padding: 10px;
@@ -115,6 +117,9 @@ nav {
     display: flex;
     justify-content: space-evenly;
     padding: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    align-items: center;
+   
 }
 .sam { 
     display: flex;
@@ -155,15 +160,63 @@ nav {
     text-align: center;
 }
 .buyindex {
-    background-color: rgb(222, 214, 209);
+    background-color: rgb(255, 202, 239);
     padding: 3px;
 }
 
 .profilePic {
     position: absolute;
     right: 25px;
-    top: 5px;
-    padding: 5px;
-    border-radius: 100%;
-    border: solid white 2px;
+    top: 7px;
+    border-radius: 30px;
+    border: white solid 3px ;
+
+}
+
+p {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    font-size: 2rem;
+    background: linear-gradient(to bottom, #000, #000 60%, #fff 60%, #fff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-repeat: no-repeat;
+    transition: background 0.2s ease-out;
+    white-space: nowrap;
+  }
+  
+  span {
+    position: relative;
+  }
+  
+  span:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 9px;
+    background: rgb(255, 164, 214);
+    bottom: 25px;
+    transition: all 0.2s ease-out;
+    border-radius: 5px;
+  }
+  
+  p:hover {
+    background-position: 0 11px;
+  }
+  
+  span:hover:before {
+    transform: translateY(15px)
+  }
+
+  .cart {
+    position: absolute;
+    right: 9rem;
+    top: 1px;
+    padding: 7px;
+    
+   
+ 
 }
