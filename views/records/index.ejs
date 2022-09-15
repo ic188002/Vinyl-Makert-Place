@@ -1,26 +1,22 @@
+<div class="cards container">
+    <div class="row">
+        <% records.forEach(function(record){ %>
 
-<h1> Records </h1>
-
-<table class="table table-striped">
-    <tr>
-        <th> Title </th>
-        <th> Artist </th>
-        <th> Release Date </th>
-        <th> Condition </th>
-        <th> Description </th>
-        <th> Created At </th>
-    </tr>
-
-<% records.forEach(function(record){ %>  
-    <tr>
-        <td> <a href="/records/detail?id=<%= record._id %>"> <h3><%= record.title %></h3> </a> </td>
-        <td> <%= record.artist %></td>
-        <td> <%= record.releaseDate %></td>
-        <td> <%= record.condition %></td>
-        <td> <%= record.description %></td>
-        <td> <%= moment(record.createdAt).fromNow() %></td>
-    </tr>
-<% }) %>
-
-
-</table>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card">
+                    <img src="<%= record.albumCover%>" alt="text" class="card-img-top" height="300">
+                    <div class="card-body">
+                        <h4 class="card-title"><a href="/records/detail?id=<%= record._id %>">
+                                <%= record.title %>
+                        </h4>
+                        <h5 class="card-title">
+                            <%= record.artist %>
+                        </h5>
+                        <p class="card-text"> £<%= record.askingPrice %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+                <% }) %>
+           
+    </div>
