@@ -2,7 +2,7 @@ body {
     background-color: rgb(255, 255, 255);
     margin: auto;
 }
-header {
+.header {
     color: aquamarine;
     font-family: 'Questrial', sans-serif;
     font-size: 85px;
@@ -49,6 +49,7 @@ a:link {
 
 
 .profile {
+    
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -60,6 +61,7 @@ a:link {
 }
 .innerProfile {
     font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -103,9 +105,6 @@ a:link {
   bottom: 0px;
        
 }
-cards {
-    padding: 50px;
-}
 
 
 nav {
@@ -117,7 +116,8 @@ nav {
 .sam { 
     display: flex;
     flex-direction: row;
-    padding: 10px
+    padding: 10px;
+    border-radius: 20px;
    
 }
 .card {
@@ -127,8 +127,31 @@ nav {
 .logo {
     position: absolute;
     left: 25px;
-    top: 20px;
+    top: 5px;
 }
 .buy {
     text-align: center;
+}
+.details {
+    text-align: center;
+    padding: 20px;
+}
+.home {
+    padding: 20px;
+    text-align: center;
+
+}
+
+.cardbody {
+    background-color:  rgb(181, 232, 164);
+    text-align: center;
+
+}
+.price {
+    background-color: rgb(137, 210, 163);
+    text-align: center;
+}
+.buyindex {
+    background-color: rgb(255, 200, 196);
+    padding: 3px;
 }

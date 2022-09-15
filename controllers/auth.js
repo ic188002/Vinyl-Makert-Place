@@ -87,16 +87,16 @@ exports.password_change_get = (req, res) => {
 
 
 exports.password_update_put = (req, res) => {
-    console.log(req.body.id);
+    console.log(" req.body.id " + req.body.id);
 
-    User.findByIdAndUpdate(req.body.id, req.body)
+    // User.findByIdAndUpdate(req.body.id, req.body)
     console.log(req.body)
     let hash = bcrypt.hashSync(req.body.password, salt);
     console.log(hash);
 
-    user.password = hash;
+    req.body.password = hash;
 
-    user.save()
+    User.findByIdAndUpdate(req.body.id, req.body)
     .then(() => {
         res.redirect("/users/myaccount");
     })
