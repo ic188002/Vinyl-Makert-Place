@@ -1,16 +1,29 @@
+<div class="outerProfile">
 <div class="profile">
-  
-    <div>
-      <br>
-      <h3> <%= user.firstName %> Profile</h3>
-<br>
+    <div class="innerProfile">
+        <div>
+            <br>
+            <h3>
+                <%= user.firstName %>`s Profile
+            </h3>
+            <br>
 
-    <div>
-    <img class="img" src= "<%=user.profilePicture%>"  width= "300" height="300"></div>
-    <div>Email Address: <%= user.emailAddress %></div>
-    <div>Phone Number: <%= user.phoneNumber %></div>
-    <div>Created At: <%= moment(user.createdAt).fromNow() %></div>
-    <br/>
+            <div>
+                <img class="img" src="<%=user.profilePicture%>" width="300" height="300">
+            </div>
+            <br>
+            <div>Email Address: <%= user.emailAddress %>
+            </div>
+            <div>Phone Number: <%= user.phoneNumber %>
+            </div>
+            <div>Created At: <%= moment(user.createdAt).fromNow() %>
+            </div>
+            <br />
+        </div>
+        <a href="/users/edit?id=<%=user._id%>">Edit Profile</a>
     </div>
-    <a href="/users/edit?id=<%=user._id%>">Edit Profile</a>
 </div>
+</div>
+
+
+

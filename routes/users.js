@@ -31,5 +31,4 @@ router.put("/users/update", userCntrl.user_update_put);
 
 
 
-
 module.exports = router;
