@@ -4,10 +4,12 @@
     <% records.forEach(function(record){ %>
         <div class="cols">
             <div class="card">
-                <img class="card-img-top" src="<%= record.albumCover%>" alt="Card image cap" width="150px" height="350px">
+                <img class="card-img-top" src="<%= record.albumCover%>" alt="Card image cap" width="150px" height="350px" >
                 <div class="card-body">
-                    <h5 class="card-title"><a href="/records/detail?id=<%= record._id %>"></a><%= record.title %>
-                    </h5>
+                   <a href="/records/detail?id=<%= record._id %>">
+                    <h5 class="card-title"><%= record.title %></a>
+                 
+
                     <p class="card-text">
                         <%= record.artist %>
                     </p>
