@@ -2,6 +2,18 @@ body {
     background-color: rgb(255, 255, 255);
     margin: auto;
 }
+header {
+    color: aquamarine;
+    font-family: 'Questrial', sans-serif;
+    font-size: 85px;
+    text-align: center;
+    background-color: rgb(255, 176, 196);
+
+}
+.welcome {
+    color: rgb(255, 255, 255);
+    
+}
 #head {
     margin-left: auto;
     margin-right: auto;
@@ -18,7 +30,9 @@ body {
 }
 .nav{
   
-    padding: 20px;
+    padding: 10px;
+    text-align: center;
+    font-weight: 200;
 }
 .menuAlignment{
     text-align: right;
@@ -27,22 +41,45 @@ body {
 h1 {
     font-family: 'Quicksand', sans-serif;
     font-size: 80px;
-    color: rgb(242, 179, 231);
+    color: rgb(255, 176, 196);
 }
 a:link {
     text-decoration: none;
   }
+
+
 .profile {
     display: flex;
+    align-items: center;
     flex-direction: column;
+    padding: 20px;
+    background-color:rgb(255, 200, 196);
+    border-radius: 55px;
+   
+  
 }
+.innerProfile {
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color:rgb(181, 232, 164);
+    border-radius: 55px;
+    text-align: center;
+    color: white;
+    border: 14px solid white;
+
+}
+
+
 .backgroundProfile {
     /* background-image: url("https://i.ibb.co/kS68PYZ/record.png"); */
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    background-color: aquamarine;
+    background-color: rgb(181, 232, 164);
     /* background-color: brown; */
     
 }
@@ -66,48 +103,32 @@ a:link {
   bottom: 0px;
        
 }
-
-
-/* .sign {
-    float: right;
-    background-image: url("/photos/bar.png");
-} */
-
-/* .signUp {
-        position: absolute;
-    background-image: url("/photos/buy.png");
-    background-size: contain;
-    height: 100px;
-    width: 180px;
-    top: 80px;
-    left: 24%;
-    
-} */
-.buy {
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-image: url("/photos/buy.png");
-    background-size: contain;
-    height: 100px;
-    width: 180px;
-    top: 80px;
-    left: 24%;
+cards {
+    padding: 50px;
 }
-.sell {
- display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    background-image: url("/photos/sell.png");
-    background-size: contain;
-    height: 100px;
-    width: 180px;
-    top: 80px;
-    left: 12%;  */
-}
+
+
 nav {
     background-color: rgb(181, 232, 164);
     display: flex;
     justify-content: space-evenly;
     padding: 10px;
+}
+.sam { 
+    display: flex;
+    flex-direction: row;
+    padding: 10px
+   
+}
+.card {
+    
+    margin: 1rem auto ;
+}
+.logo {
+    position: absolute;
+    left: 25px;
+    top: 20px;
+}
+.buy {
+    text-align: center;
 }

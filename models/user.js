@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-var Buffer = require('buffer/').Buffer
 const userSchema = mongoose.Schema({
     firstName: {
         type: String,
@@ -72,3 +71,5 @@ userSchema.methods.verifyPassword = function(password){
 const User = mongoose.model('User', userSchema)
 
 module.exports = {User}
+
+

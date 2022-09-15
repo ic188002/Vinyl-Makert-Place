@@ -68,3 +68,38 @@ exports.auth_logout_get = (req, res) => {
     res.redirect("/auth/signin");
    }) 
 }
+
+
+exports.password_change_get = (req, res) => {
+    User.findById(req.query.id)
+    .then((user) => {
+        console.log(user);
+        res.render("users/changePassword", {user})
+    })
+    .catch(err => {
+        console.log(err);
+    })
+}
+
+
+
+
+exports.password_update_put = (req, res) => {
+    console.log(req.body.id);
+
+    User.findByIdAndUpdate(req.body.id, req.body)
+    console.log(req.body)
+    let hash = bcrypt.hashSync(req.body.password, salt);
+    console.log(hash);
+
+    user.password = hash;
+
+    user.save()
+    .then(() => {
+        res.redirect("/users/myaccount");
+    })
+    .catch(err => {
+        console.log(err)
+    })
+}
+
