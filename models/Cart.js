@@ -4,8 +4,20 @@ const mongoose = require('mongoose');
 // Schema
 const cartSchema = mongoose.Schema({
     record: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Record'
+        title: String,
+        artist: String,
+        description: String,
+        condition: String,
+        releaseDate: String,
+        askingPrice: Number,
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+        },
+        albumCover: {
+            type: String
+        }
+    
     }],
     totalPrice: Number,
 

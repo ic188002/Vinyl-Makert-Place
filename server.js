@@ -29,9 +29,9 @@ const expressLayouts = require('express-ejs-layouts');
 // Import Routes
 const indexRouter = require('./routes/index');
 const recordsRouter = require('./routes/records');
-const userRouter = require('./routes/users');
+const usersRouter = require('./routes/users');
 const authRouter = require('./routes/auth');
-const cartRouter = require('./routes/cart');
+const cartsRouter = require('./routes/carts');
 
 // Look into views folder for the file named as layout.ejs
 app.use(expressLayouts);
@@ -68,9 +68,9 @@ app.use(function(req, res, next){
 // Mount Routes
 app.use('/', indexRouter);
 app.use('/', recordsRouter);
-app.use('/', userRouter);
+app.use('/', usersRouter);
 app.use('/', authRouter);
-app.use('/', cartRouter);
+app.use('/', cartsRouter);
 
 // NodeJS will look in a folder called views/ for all EJS related files.
 app.set("view engine", "ejs");

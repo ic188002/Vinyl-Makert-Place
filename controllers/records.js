@@ -35,8 +35,13 @@ exports.record_create_post = (req, res) => {
     let record = new Record(req.body);
     console.log(req.body);
     console.log(req.file);
-    let imagePath = '/albumCover/' + req.file.filename;
-    record.albumCover= imagePath;
+    if (req.file!==undefined){
+        let imagePath = '/albumCover/' + req.file.filename;
+        record.albumCover= imagePath;
+    } else {
+        let imagePath = "https://via.placeholder.com/400"
+        record.albumCover= imagePath;
+    }
     record.save()
     .then(() => {
         console.log(req.body.record);
@@ -116,6 +121,7 @@ exports.record_delete_get = (req, res) => {
     })
 }
 
+// GET SPOTIFY AUTH
 var spotifyApi = new SpotifyWebApi({
     clientId: process.env.spotifyID,
     clientSecret: process.env.spotifySecret,
@@ -133,7 +139,7 @@ spotifyApi.clientCredentialsGrant().then(
     }
 );
 
-// HTTP POST - Record Search
+// SPOTIFY SEARCH
 exports.record_search_post = (req, res) => {
     spotifyApi.searchAlbums(req.body.search, { limit: 20, offset: req.query.offset })
     .then(function(data) {
@@ -145,7 +151,7 @@ exports.record_search_post = (req, res) => {
     })
 }
 
-// HTTP POST - Record Next
+// SPOTIFY RESULTS NEXT PAGE
 exports.record_next_post = (req, res) => {
         axios.get(req.body.next, { headers: { 'Authorization': 'Bearer' + ' ' + spotifyApi._credentials.accessToken } })
         .then(response => {
@@ -156,7 +162,7 @@ exports.record_next_post = (req, res) => {
         })
 }
 
-// HTTP POST - Record Next
+// SPOTIFY RESULTS PREV PAGE
 exports.record_prev_post = (req, res) => {
     axios.get(req.body.prev, { headers: { 'Authorization': 'Bearer' + ' ' + spotifyApi._credentials.accessToken } })
     .then(response => {
