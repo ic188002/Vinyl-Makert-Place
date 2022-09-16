@@ -220,3 +220,6 @@ p {
 .input {
     background-color: rgb(243, 255, 251);
 }
+#checkout{
+    width: 102%;
+}
