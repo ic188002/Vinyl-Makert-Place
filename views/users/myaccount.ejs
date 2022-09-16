@@ -30,6 +30,7 @@
                     <th> Title </th>
                     <th> Artist </th>
                     <th> Release Date</th>
+                    <th> Edit Infomation</th>
                 </tr>
                 <% user.record.forEach(function(record) { %>
                 <tr>
@@ -37,8 +38,10 @@
                     <td> <a href="/records/detail?id=<%= record._id %>"><%= record.title %></a></td>
                     <td> <%= record.artist %> </td>
                     <td> <%= record.releaseDate %> </td>
+                    <td><a href="/records/edit?id=<%=record._id%>">Edit </a></td>
                 </tr>
             <% })} %>
+           
             </table>
         </div>
     </div>
