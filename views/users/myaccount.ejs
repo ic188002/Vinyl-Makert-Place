@@ -1,28 +1,47 @@
 <div class="outerProfile">
-<div class="profile">
-    <div class="innerProfile">
-        <div>
-            <br>
-            <h3>
-                <%= user.firstName %>`s Profile
-            </h3>
-            <br>
-
+    <div class="profile">
+        <div class="innerProfile">
             <div>
-                <img class="img" src="<%=user.profilePicture%>" width="300" height="300">
+                <br>
+                <h3>
+                    <%= user.firstName %>`s Profile
+                </h3>
+                <br>
+
+                <div>
+                    <img class="img" src="<%=user.profilePicture%>" width="300" height="300">
+                </div>
+                <br>
+                <div>Email Address: <%= user.emailAddress %>
+                </div>
+                <div>Phone Number: <%= user.phoneNumber %>
+                </div>
+                <div>Created At: <%= moment(user.createdAt).fromNow() %>
+                </div>
+                <br />
             </div>
-            <br>
-            <div>Email Address: <%= user.emailAddress %>
-            </div>
-            <div>Phone Number: <%= user.phoneNumber %>
-            </div>
-            <div>Created At: <%= moment(user.createdAt).fromNow() %>
-            </div>
-            <br />
+            <a href="/users/edit?id=<%=user._id%>">Edit Profile</a>
         </div>
-        <a href="/users/edit?id=<%=user._id%>">Edit Profile</a>
+        <div class="container">
+            <% if(user.record) { %>
+            <table class="table table-striped">
+                <tr>
+                    <th> Artwork </th>
+                    <th> Title </th>
+                    <th> Artist </th>
+                    <th> Release Date</th>
+                </tr>
+                <% user.record.forEach(function(record) { %>
+                <tr>
+                    <td><img src="<%= record.albumCover %>" height="64px" width="64px"></td>
+                    <td> <a href="/records/detail?id=<%= record._id %>"><%= record.title %></a></td>
+                    <td> <%= record.artist %> </td>
+                    <td> <%= record.releaseDate %> </td>
+                </tr>
+            <% })} %>
+            </table>
+        </div>
     </div>
-</div>
 </div>
 
 
