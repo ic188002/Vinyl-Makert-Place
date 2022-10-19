@@ -1,19 +1,23 @@
 <div class="container">
     <% let cart = session.cart %>
+    <% let total = 0 %>
     <table class="table table-striped">
         <tr>
             <th> Artwork </th>
             <th> Title </th>
             <th> Artist </th>
             <th> Release Date</th>
+            <th> Price</th>
             <th></th>
         </tr>
             <% for (let i = 0; i < cart.record.length; i++){console.log(cart.record[i].title); %>
+                <% total += cart.record[i].askingPrice%>
         <tr>
             <td><img src="<%= cart.record[i].albumCover %>" height="64px" width="64px""/></td>
             <td> <%= cart.record[i].title %> </td>
             <td> <%= cart.record[i].artist %> </td>
             <td> <%= cart.record[i].releaseDate %> </td>
+            <td> £<%= cart.record[i].askingPrice %> </td>
             <td>
                 <form method="POST" action="/carts/update?_method=PUT&pos=<%=[i]%>">
                     <button type="submit" class="btn btn-primary">
@@ -26,9 +30,18 @@
     </table>
 </div>
 <div class="container">
-    <form>
-        <buttontype="submit" class="btn btn-primary">
-            Checkout
-        </button>
-    </form>
+    <div class="row">
+        <div class="col">
+            <h5 class="d-flex justify-content-center">Total Price:£<%= total %></h5>
+        </div>
+    <div class="row">
+        <div class="col">
+            <form>
+                <button type="submit" class="btn btn-primary" id="checkout">
+                    Checkout
+                </button>
+            </form>
+        </div>
+    </div>
+    </div>
 </div>
