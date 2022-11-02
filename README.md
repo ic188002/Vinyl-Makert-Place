@@ -12,25 +12,36 @@
 <br>
 
 
-Description
+<h3>Description</h3>
 
 In this project I wanted to create and deploy an e-commerce website that would allow users to sign-up and view their profiles as well as list items for sale. The name for the website is Discoid which stands for a round disk and our website specialises on the selling and buying of vinyl records. 
 
 
-Deployment link
+<h3>Deployment link</h3>
 
 Find our website here https://discoidappsei66.herokuapp.com/auth/signin 
 
 
-Timeframe & Working Team (Solo/Pair/Group)
+<h3>Timeframe & Working Team (Solo/Pair/Group)</h3>
 
 This was a paired project in which I was working alongside Einar Skreslett, this was my first experience working as a pair and I believe it was a great success. 
 
 
 
-Technologies Used
+<h3>Technologies Used</h3>
+<ul>
+<li>HTML  </li>
+<li>CSS </li>
+<li>JavaScript   </li>
+<li>multer   </li>
+<li>Git   </li>
+<li>GitHub   </li>
+<li>Express   </li>
+<li>MongoDB   </li>
+<li>Bootstrap   </li>
+<li>Heroku   </li>
+</ul>
 
-HTML, CSS, JavaScript, multer, Git, GitHub, express, MongoDB, Bootstrap, Heroku
 
 
 
