@@ -69,11 +69,11 @@ Planning
 
 During our first meeting we had decided on a path we wanted to go down and from then we sketched some ruff wire frames and our ERD that lays out our user paths.   
 The ERD shows the relationship that the database on mongoDB will have, from creating an account to listing an item for sale. The one to many relationship is the foundation of most e-commerce as one seller can have many items for sale. 
-
+<img  src="/photos/9.png" width="80%">
 At this point we also created a Trello Board in order to assign work and keep a track of what jobs we were taking on.  
-
-
-
+<img  src="/photos/8.png" width="80%">
+<img  src="/photos/7.png" width="80%">
+<img  src="/photos/6.png" width="80%">
 Build/Code Process 
 
 
@@ -81,32 +81,32 @@ Build/Code Process
 
 This is our layout.ejs master page. This is the starting page for anyone to enter the site. The navigation allows users to sign-in, sign-up or view the product, I also included a div called welcome that projects a welcome message from Mongobd showing their name and profile pic.
 
-
+<img  src="/photos/5.png" width="80%">
 
 views/index.ejs
 
 Index page renders all the items available  to purchase, for this I turned to Bootstrap, by defining the class as “row row-col 3” it will form rows of 3 that will be automatically rendered from the database.
 
-
+<img  src="/photos/4.png" width="80%">
 
 routes/records.js
 
 This routes file provides the path for record APIs; it is also where I required Multer to allow the adding of album artwork. As seen router.post(“/records/sell" ,  upload.single-(‘image’), recordsCntrl.record_create_post);
 
- 
+<img  src="/photos/3.png" width="80%"> 
 
 controller/records.js
 
 In the controller is where we code the functionality of the website as well as implementing the APIs. In this image we can see the application of the Spotify API that allows the website user to search Spotify's database and return them the artist's name, album and year of release. This provides a more fluid user experience.  
 
-
+<img  src="/photos/2.png" width="80%">
 
 Challenges
  
 
 The main challenge I came across during the project was providing the user with an index of all products that users have listed for sale. Within the index.ejs document I had to use a forEach loop to go through the mongoDB database then retrieve all the objects stored within then display them in rows and columns. The whole process of adding and displaying images I had to tackle in this code path, using Multer and Bootstrap I discovered was the quickest way to tackle this challenge. Another challenging part of this project was comets terms with GitHub, as this was my first group project it did take a few tries to go through the commit, pull upstream and merge processes. But at the end we had the whole process down, the main learning point I took away from GitHub was to be in clear communication with our team members and try your best not to work in the same files at the same time to avoid merge conflicts. 
 
-
+<img  src="/photos/1.png" width="80%">
 
 
 Wins
