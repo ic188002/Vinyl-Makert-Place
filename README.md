@@ -64,7 +64,9 @@ Design, build and deploy an active and functional website which needs to fulfil 
 During our first meeting we had decided on a path we wanted to go down and from then we sketched some ruff wire frames and our ERD that lays out our user paths.   
 The ERD shows the relationship that the database on mongoDB will have, from creating an account to listing an item for sale. The one to many relationship is the foundation of most e-commerce as one seller can have many items for sale. 
 <img  src="/photos/9.png" width="100%"/>
+<br>
 At this point we also created a Trello Board in order to assign work and keep a track of what jobs we were taking on.  
+<br>
 <img  src="/photos/8.png" width="100%"/>
 <img  src="/photos/7.png" width="100%"/>
 <img  src="/photos/6.png" width="100%"/>
