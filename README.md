@@ -13,7 +13,7 @@ In this project I wanted to create and deploy an e-commerce website that would a
 <hr>
 <h2>Deployment link</h2>
 
-Find our website here https://discoidappsei66.herokuapp.com/auth/signin 
+Find our website here <a href="https://discoidappsei66.herokuapp.com/auth/signin"> Click here<a> 
 <hr>
 
 <h2>Timeframe & Working Team (Solo/Pair/Group)</h2>
