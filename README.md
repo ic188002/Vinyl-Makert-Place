@@ -113,6 +113,7 @@ The main challenge I came across during the project was providing the user with 
 
 
 <img  src="/photos/1.png" width="100%">
+<img  src="/photos/editgit.png" width="100%">
 
 
 <h2>Wins</h2>
