@@ -103,9 +103,9 @@ I also added authorization checks to all the routes apart from the records/index
 In the controller is where we code the functionality of the website as well as implementing the APIs. In this image we can see the application of the Spotify API that allows the website user to search Spotify's database and return them the artist's name, album and year of release. This provides a more fluid user experience. We also set the maximum limit of song recommendation to 20, as seen after the req.body.seach request. 
 
 <img  src="/photos/2.png" width="100%">
-
+<h2>CSS</h2>
 We used Coolors.co to select our colour scheme in such a way that we can keep a consistent theme throughout our application. Using ProCreate and PhotoShop to design and build the UX of the site allowed me to blend a modern interface with a retro theme. Bootstrap allowed me to fully customise the record cards and kept the index clear and simple to the user. I also used JQuery to select HTML elements in the <nav> that allowed me to animate their properties making them interactive and responsive.
-
+<img  src="/photos/editgit.png" width="100%">
 <h3>Challenges</h3>
  
 
@@ -113,7 +113,7 @@ The main challenge I came across during the project was providing the user with 
 
 
 <img  src="/photos/1.png" width="100%">
-<img  src="/photos/editgit.png" width="100%">
+
 
 
 <h2>Wins</h2>
